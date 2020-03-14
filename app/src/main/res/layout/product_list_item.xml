@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/Improduct"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_190sdp"/>
+
+        <TextView
+            android:text="name"
+            android:layout_marginTop="-10dp"
+            android:id="@+id/TvproductName"
+            android:layout_below="@+id/Improduct"
+            android:layout_width="match_parent"
+            android:paddingLeft="@dimen/_20sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:background="@drawable/btndraw"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_20sdp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/TvproDescrip"
+            android:text="Description"
+            android:layout_width="match_parent"
+            android:layout_below="@+id/TvproductName"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_15sdp"
+            android:paddingLeft="@dimen/_20sdp"
+            android:background="@drawable/btndraw"
+            android:layout_height="@dimen/_30sdp"/>
+        <TableLayout
+            android:id="@+id/Tablelayout"
+            android:layout_marginTop="-4dp"
+            android:layout_width="@dimen/_55sdp"
+            android:background="@drawable/addprice"
+            android:layout_below="@+id/Improduct"
+            android:layout_marginRight="@dimen/_30sdp"
+            android:layout_alignParentRight="true"
+            android:layout_height="@dimen/_55sdp">
+            <TableRow>
+
+
+
+
+                <TextView
+                    android:id="@+id/Tvrupi"
+                    android:layout_width="match_parent"
+                    android:text="₹"
+                    android:textSize="@dimen/_12sdp"
+                    android:layout_column="1"
+                    android:paddingLeft="@dimen/_8sdp"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:layout_height="@dimen/_60sdp"/>
+                <TextView
+                    android:id="@+id/TvPrice"
+                    android:text="prie"
+                    android:layout_column="2"
+                    android:gravity="center"
+                    android:textSize="@dimen/_12sdp"
+                    android:paddingLeft="@dimen/_8sdp"
+                    android:textColor="@color/white"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_60sdp"/>
+            </TableRow>
+        </TableLayout>
+
+
+    </RelativeLayout>
+
+
+</LinearLayout>
