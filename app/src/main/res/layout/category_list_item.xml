@@ -21,7 +21,6 @@
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/Imageview_category"
                 android:layout_width="@dimen/_96sdp"
-                android:src="@drawable/jeans"
                 android:layout_gravity="center"
                 app:civ_border_color="@color/blue"
                 android:layout_height="@dimen/_96sdp"/>
