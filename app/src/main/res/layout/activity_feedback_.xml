@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".Feedback_Activity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+                <EditText
+                    android:id="@+id/EtFname"
+                    android:layout_margin="@dimen/_10sdp"
+                    android:layout_width="match_parent"
+                    android:hint="Enter Name"
+                    android:gravity="center"
+                    android:background="@drawable/rvitem"
+                    android:layout_height="@dimen/_30sdp" />
+                    <EditText
+                        android:id="@+id/EtFemail"
+                        android:layout_margin="@dimen/_10sdp"
+                        android:layout_width="match_parent"
+                        android:hint="Enter Email"
+                        android:gravity="center"
+                        android:background="@drawable/rvitem"
+                        android:layout_height="@dimen/_30sdp" />
+    <EditText
+        android:id="@+id/EtFeedback"
+        android:gravity="center"
+        android:hint="Enter Your Feedback"
+        android:layout_margin="@dimen/_10sdp"
+        android:layout_width="match_parent"
+        android:background="@drawable/rvitem"
+        android:layout_height="@dimen/_200sdp"/>
+
+                <Button
+                    android:id="@+id/BtnFsend"
+                    android:layout_width="@dimen/_100sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/EtFeedback"
+                    android:layout_gravity="center"
+                     android:background="@color/white"
+                    android:layout_marginTop="-62dp"
+                    android:layout_marginRight="@dimen/_12sdp"
+                    android:layout_alignParentRight="true"
+                    android:text="send"
+                    android:textColor="@color/blue" />
+                </LinearLayout>
+
+            </RelativeLayout>
+    </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

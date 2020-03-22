@@ -1,5 +1,6 @@
 package com.example.myproject;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -46,12 +47,13 @@ public class ProdctFragmentRecy_Adapter extends RecyclerView.Adapter<ProdctFragm
         Glide.with(context).load(product.get(position).getImage()).into(holder.image);
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("CheckResult")
             @Override
             public void onClick(View v) {
                 n=productFragmentModal.getName();
                 d=productFragmentModal.getDescription();
                 p=productFragmentModal.getPrice();
-                img=productFragmentModal.getImage();
+                img= productFragmentModal.getImage();
                 Intent intent=new Intent(v.getContext(), Add_to_cart_Activity.class);
                 intent.putExtra("name",n);
                 intent.putExtra("description",d);
@@ -74,7 +76,6 @@ public class ProdctFragmentRecy_Adapter extends RecyclerView.Adapter<ProdctFragm
         ImageView image;
         public Viewholder(@NonNull View itemView) {
             super(itemView);
-
             tabLayout=itemView.findViewById(R.id.Tablelayout);
             name=itemView.findViewById( R.id.TvproductName );
             description=itemView.findViewById( R.id.TvproDescrip );

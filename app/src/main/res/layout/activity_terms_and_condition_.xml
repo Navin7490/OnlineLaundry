@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Terms_and_condition_Activity">
+    <TextView
+        android:textColor="@color/black"
+        android:textSize="@dimen/_16sdp"
+        android:layout_margin="@dimen/_7sdp"
+        android:layout_width="match_parent"
+        android:id="@+id/tvterms"
+        android:layout_height="wrap_content"/>
+
+</RelativeLayout>

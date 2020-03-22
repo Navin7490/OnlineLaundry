@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -22,8 +23,10 @@ public class Add_to_cart_Activity extends AppCompatActivity {
     String[]count={"1","2","3","4","5","6","7","8","9","10",
             "11","12","13","14","15","16","17","18","19","20"};
     int position = -1;
-    String n,p,d,q,i;
+    String n,p,d,q;
+    int i;
     Toast toast;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,12 +48,17 @@ public class Add_to_cart_Activity extends AppCompatActivity {
 
 
         final Intent intent=getIntent();
-        n =intent.getStringExtra("name");
+        n=intent.getStringExtra("name");
         tvpname.setText(n);
         d=intent.getStringExtra("description");
         tvpdetail.setText(d);
         p=intent.getStringExtra("price");
         tvpric.setText(p);
+       // i= Integer.parseInt(intent.getStringExtra("image"));
+        //image.setImageResource(i);
+
+
+
         Glide.with(this).load(intent.getStringExtra("image")).into(image);
 
         btnadd.setOnClickListener(new View.OnClickListener() {
@@ -77,9 +85,6 @@ public class Add_to_cart_Activity extends AppCompatActivity {
         btnaddtocart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-
-
 
             }
         });

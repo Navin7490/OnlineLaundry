@@ -66,6 +66,14 @@ public class Category_Adapter extends RecyclerView.Adapter<Category_Adapter.View
                         Intent intent=new Intent(v.getContext(), Woman_Activity.class);
                         v.getContext().startActivity(intent);
                     }
+                    if (getAdapterPosition()==2){
+                        Intent intent=new Intent(v.getContext(), Kids_Activity.class);
+                        v.getContext().startActivity(intent);
+                    }
+                    if (getAdapterPosition()==3){
+                        Intent intent=new Intent(v.getContext(), Others_Activity.class);
+                        v.getContext().startActivity(intent);
+                    }
                 }
             });
 

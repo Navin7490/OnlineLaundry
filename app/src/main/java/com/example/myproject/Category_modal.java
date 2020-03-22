@@ -1,8 +1,6 @@
 package com.example.myproject;
 
 public class Category_modal {
-    public Category_modal() {
-    }
 
     public String getName() {
         return name;

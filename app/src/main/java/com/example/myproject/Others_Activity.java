@@ -9,33 +9,34 @@ import android.view.MenuItem;
 
 import com.google.android.material.tabs.TabLayout;
 
-public class Men_Activity extends AppCompatActivity {
+public class Others_Activity extends AppCompatActivity {
+
     TabLayout tabLayout;
     ViewPager viewPager;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_men_);
+        setContentView(R.layout.activity_others_);
+
+        tabLayout=findViewById(R.id.Tablayout_others);
+        viewPager=findViewById(R.id.Viewpage_others);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("Men Clothe");
-        tabLayout=findViewById(R.id.tablayout);
-        viewPager=findViewById(R.id.viewpage);
+        getSupportActionBar().setTitle("Others Clothe");
 
-        tabLayout.addTab(tabLayout.newTab().setText("shirts"));
-        tabLayout.addTab(tabLayout.newTab().setText("suits"));
-        tabLayout.addTab(tabLayout.newTab().setText("outdoor"));
-        tabLayout.addTab(tabLayout.newTab().setText("trousers"));
-        tabLayout.addTab(tabLayout.newTab().setText("Ethnic"));
+
+        tabLayout.addTab(tabLayout.newTab().setText("Accessories"));
+        tabLayout.addTab(tabLayout.newTab().setText("blanket"));
+        tabLayout.addTab(tabLayout.newTab().setText("bedding"));
 
 
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
-        final Tab_Men_Adapter adapter = new Tab_Men_Adapter(getSupportFragmentManager(), this, tabLayout.getTabCount());
+        Tab_others_Adapter adapter=new Tab_others_Adapter(getSupportFragmentManager(),this,tabLayout.getTabCount());
         viewPager.setAdapter(adapter);
 
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
-
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {

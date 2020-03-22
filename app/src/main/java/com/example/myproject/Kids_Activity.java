@@ -1,9 +1,11 @@
 package com.example.myproject;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
+import android.view.MenuItem;
 
 import com.google.android.material.tabs.TabLayout;
 
@@ -18,6 +20,9 @@ public class Kids_Activity extends AppCompatActivity {
         setContentView(R.layout.activity_kids_);
         tabLayout=findViewById(R.id.Tablayout_kids);
         viewPager=findViewById(R.id.Viewpage_kids);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("Kids Cothe");
 
         tabLayout.addTab(tabLayout.newTab().setText("kidsshirt"));
         tabLayout.addTab(tabLayout.newTab().setText("kidsoutdoor"));
@@ -45,6 +50,13 @@ public class Kids_Activity extends AppCompatActivity {
             }
         });
 
+    }
 
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId()==android.R.id.home){
+            finish();
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

@@ -33,6 +33,13 @@ public class Tab_Men_Adapter extends FragmentPagerAdapter {
             case 2:
                 MenOutdoor_Fragment menOutdoor_fragment=new MenOutdoor_Fragment();
                 return menOutdoor_fragment;
+            case 3:
+                Men_trousers_Fragment fragment=new Men_trousers_Fragment();
+                return fragment;
+            case 4:
+                Men_EthnicFragment fragment1=new Men_EthnicFragment();
+                return fragment1;
+
         }
         return null;
     }
