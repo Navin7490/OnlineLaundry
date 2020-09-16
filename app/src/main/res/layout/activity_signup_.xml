@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue"
+    android:gravity="center"
+    tools:context=".Signup_Activity">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_50sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:layout_height="wrap_content">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/ImProfile"
+                android:layout_width="@dimen/_80sdp"
+                android:layout_marginLeft="@dimen/_100sdp"
+                android:layout_gravity="center"
+                android:src="@drawable/addphoto"
+                android:layout_height="@dimen/_80sdp"/>
+
+
+            <EditText
+                android:drawablePadding="@dimen/_10sdp"
+                android:id="@+id/EtName"
+                android:layout_below="@+id/ImProfile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter Name"
+                android:inputType="textPersonName"
+                android:background="@drawable/edit"
+                android:padding="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:drawableLeft="@drawable/usericonn2"
+                />
+            <EditText
+                android:id="@+id/EtEame"
+                android:layout_below="@+id/EtName"
+                android:drawablePadding="@dimen/_10sdp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter Email"
+                android:background="@drawable/edit"
+                android:padding="@dimen/_10sdp"
+                android:inputType="textEmailAddress"
+                android:drawableLeft="@drawable/iconem"
+                android:layout_marginTop="@dimen/_5sdp"
+                />
+            <EditText
+                android:id="@+id/EtPassword"
+                android:layout_below="@+id/EtEame"
+                android:drawablePadding="@dimen/_10sdp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter Password"
+                android:maxLength="10"
+                android:inputType="textPassword"
+                android:background="@drawable/edit"
+                android:padding="@dimen/_10sdp"
+
+                android:drawableLeft="@drawable/icpass"
+                android:layout_marginTop="@dimen/_5sdp"/>
+            <EditText
+                android:id="@+id/EtMobileNumber"
+                android:layout_below="@+id/EtPassword"
+                android:drawablePadding="@dimen/_10sdp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter Mobile Number"
+                android:maxLength="10"
+                android:background="@drawable/edit"
+                android:inputType="phone"
+                android:padding="@dimen/_10sdp"
+                android:drawableLeft="@drawable/iconphone"
+                android:layout_marginTop="@dimen/_5sdp"/>
+            <TextView
+                android:id="@+id/TvGender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_10sdp"
+                android:layout_below="@+id/EtMobileNumber"
+                android:textColor="#021020"
+                android:text="Gender"/>
+            <RadioGroup
+                android:id="@+id/RGroup"
+                android:layout_below="@+id/TvGender"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/RBTnMale"
+                    android:buttonTint="#F5F6F7"
+                    android:layout_width="@dimen/_85sdp"
+                    android:layout_height="@dimen/_22sdp"
+                    android:text="Male" />
+
+                <RadioButton
+                    android:id="@+id/EtRBTNFemal"
+                    android:buttonTint="#F5F6F7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_22sdp"
+                    android:text="Female" />
+
+            </RadioGroup>
+
+            <Button
+                android:id="@+id/BTNREgister"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Registration"
+                android:layout_below="@+id/RGroup"
+                android:padding="@dimen/_10sdp"
+                android:gravity="center"
+                android:layout_marginLeft="@dimen/_50sdp"
+                android:layout_marginRight="@dimen/_50sdp"
+                android:textColor="@color/blue"
+                android:background="@drawable/edit"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_20sdp"/>
+            <TextView
+                android:id="@+id/TvLoginbtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:onClick="BTNLogin"
+                android:textColor="#F5F6F7"
+                android:layout_alignParentBottom="true"
+                android:textSize="@dimen/_12sdp"
+                android:text="Already Account\n\nsign in"/>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

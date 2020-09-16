@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <item android:id="@+id/item_1"
+        android:icon="@drawable/myorder2"
+        android:title="My Orders"
+        android:checked="true"
+        app:showAsAction="ifRoom"/>
+    <item android:id="@+id/item_2"
+        android:icon="@drawable/mycart"
+        app:showAsAction="ifRoom"
+        android:checked="true"
+        android:title="My Cart" />
+    <item android:id="@+id/item_3"
+        android:icon="@drawable/logout"
+        app:showAsAction="ifRoom"
+        android:checked="true"
+        android:title="Logout" />
+
+    <item android:id="@+id/item_4"
+        android:icon="@drawable/share"
+        app:showAsAction="ifRoom"
+        android:checked="true"
+        android:title="Share" />
+    <item android:id="@+id/item_5"
+        android:icon="@drawable/terms"
+        app:showAsAction="ifRoom"
+        android:checked="true"
+        android:title="Terms Condition" />
+    <item android:id="@+id/item_6"
+        android:icon="@drawable/about"
+        app:showAsAction="ifRoom"
+        android:checked="true"
+        android:title="About" />
+    <item android:id="@+id/item_7"
+        app:showAsAction="ifRoom"
+        android:checked="true"
+        android:icon="@drawable/feedback"
+        android:title="Feedback"/>
+
+
+</menu>

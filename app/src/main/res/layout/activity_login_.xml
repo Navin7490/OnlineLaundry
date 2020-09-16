@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue"
+    android:layout_gravity="center"
+    tools:context=".Login_Activity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_margin="@dimen/_10sdp"
+        android:layout_height="wrap_content">
+
+
+<TextView
+    android:onClick="adminloginpage"
+    android:text="Admin login"
+    android:layout_alignParentRight="true"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"/>
+
+            <EditText
+                android:id="@+id/ETLoginEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_200sdp"
+                android:inputType="textEmailAddress"
+                android:drawableLeft="@drawable/iconem"
+                android:background="@drawable/edit"
+                android:drawablePadding="@dimen/_10sdp"
+                android:hint="Enter Email"/>
+            <EditText
+                android:id="@+id/ETLoginPassword"
+
+                android:layout_below="@+id/ETLoginEmail"
+                android:layout_marginTop="@dimen/_30sdp"
+                android:background="@drawable/edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_10sdp"
+                android:drawablePadding="@dimen/_10sdp"
+                android:inputType="textPassword"
+                android:drawableLeft="@drawable/icpass"
+                android:hint="Enter Password"/>
+            <Button
+                android:id="@+id/BTNLogin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_10sdp"
+                android:onClick="login"
+                android:gravity="center"
+                android:layout_below="@+id/ETLoginPassword"
+                android:layout_marginTop="@dimen/_25sdp"
+                android:textColor="@color/blue"
+                android:background="@drawable/edit"
+                android:layout_marginRight="@dimen/_50sdp"
+               android:layout_marginLeft="@dimen/_50sdp"
+                android:text="Login"/>
+<!--            <RelativeLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content">-->
+            <TextView
+                android:id="@+id/Tv_forgot"
+                android:textSize="@dimen/_15sdp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_below="@+id/BTNLogin"
+                android:onClick="goforfortepassword"
+                android:layout_marginTop="@dimen/_30sdp"
+                android:textColorHint="@color/white"
+                android:hint="Forgote Password"/>
+
+            <TextView
+                android:id="@+id/TvRSTPage"
+                android:textSize="@dimen/_10sdp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="@dimen/_80sdp"
+                android:textColorHint="@color/white"
+                android:layout_alignParentBottom="true"
+                android:onClick="gotoregistrationpage"
+                android:hint="Don't have an Account\n\nsign up"/>
+            </RelativeLayout>
+<!--       // </LinearLayout>-->
+<!--   // </ScrollView>-->
+<!--    </RelativeLayout>-->
+
+</RelativeLayout>
