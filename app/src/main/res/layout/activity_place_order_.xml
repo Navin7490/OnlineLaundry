@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@color/blue"
+    tools:context=".Place_order_Activity">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:padding="@dimen/_20sdp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="@color/blue"
+            android:layout_margin="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:gravity="center">
+
+
+            <EditText
+                android:drawablePadding="@dimen/_10sdp"
+                android:id="@+id/EtName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter Name"
+                android:inputType="textPersonName"
+                android:padding="@dimen/_10sdp"
+                android:background="@drawable/rvitem"
+                android:layout_marginTop="@dimen/_5sdp"
+                />
+
+
+            <EditText
+                android:id="@+id/EtMobileNumber"
+                android:drawablePadding="@dimen/_10sdp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter Mobile Number"
+                android:maxLength="10"
+                android:background="@drawable/rvitem"
+                android:inputType="number"
+                android:padding="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_5sdp"/>
+            <EditText
+                android:id="@+id/EtMobileNumberAlternativ"
+                android:drawablePadding="@dimen/_10sdp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Alternate Mobile Number"
+                android:maxLength="10"
+                android:background="@drawable/rvitem"
+                android:inputType="number"
+                android:padding="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_5sdp"/>
+            <EditText
+                android:drawablePadding="@dimen/_10sdp"
+                android:id="@+id/EtAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Building/Society/Street,Landmark,etc"
+                android:inputType="textPersonName"
+                android:background="@drawable/rvitem"
+                android:padding="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_5sdp"/>
+            <EditText
+                android:drawablePadding="@dimen/_10sdp"
+                android:id="@+id/EtDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Choose Pickup Date"
+                android:focusable="false"
+                android:inputType="none"
+                android:background="@drawable/rvitem"
+                android:padding="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                />
+            <EditText
+                android:drawablePadding="@dimen/_10sdp"
+                android:id="@+id/Ettime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Choose Pickup Time"
+                android:focusable="false"
+                android:inputType="none"
+                android:background="@drawable/rvitem"
+                android:padding="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                />
+
+            <Button
+                android:id="@+id/BTNOrder"
+                android:layout_width="@dimen/_180sdp"
+                android:layout_height="wrap_content"
+                android:text="order"
+                android:padding="@dimen/_10sdp"
+                android:textColor="@color/blue"
+                android:background="@drawable/edit"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_20sdp"/>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

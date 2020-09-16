@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="@dimen/_2sdp"
+    android:layout_height="wrap_content">
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:contextClickable="true"
+        android:elevation="@dimen/_60sdp"
+        app:cardCornerRadius="@dimen/_2sdp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_margin="@dimen/_5sdp"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/Image_Product"
+                android:scaleType="centerCrop"
+                android:adjustViewBounds="true"
+                android:layout_width="@dimen/_60sdp"
+                android:background="@drawable/clothclean"
+                android:layout_height="@dimen/_75sdp"/>
+
+            <TextView
+                android:id="@+id/Tv_productId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:textColor="@color/black"
+                android:visibility="gone"
+                android:layout_marginLeft="@dimen/_70sdp"
+                android:layout_marginRight="@dimen/_200sdp"
+                android:layout_alignRight="@+id/Image_Product"
+                android:text="25 ->" />
+            <TextView
+                android:id="@+id/Tv_produViewcategory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:textColor="@color/black"
+                android:visibility="gone"
+                android:layout_marginLeft="@dimen/_70sdp"
+                android:layout_marginRight="@dimen/_200sdp"
+                android:layout_alignRight="@+id/Image_Product"
+                android:text="25 ->" />
+
+            <TextView
+                android:id="@+id/Tv_productName"
+                android:textColor="@color/black"
+                android:layout_below="@+id/Tv_productId"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="@dimen/_70sdp"
+                android:layout_alignRight="@+id/Image_Product"
+                android:text="Name of product" />
+            <TextView
+                android:id="@+id/Tv_productDescription"
+                android:layout_below="@+id/Tv_productName"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:textColor="@color/black"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="@dimen/_70sdp"
+                android:layout_alignRight="@+id/Image_Product"
+                android:text="Description of product" />
+
+
+            <TextView
+                android:id="@+id/Tv_productPriceTitle"
+                android:layout_width="@dimen/_70sdp"
+
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/Tv_productDescription"
+                android:layout_alignRight="@+id/Image_Product"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="@dimen/_70sdp"
+                android:layout_marginRight="@dimen/_180sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:textColor="@color/black"
+                android:text="Price :" />
+
+            <TextView
+                android:id="@+id/Tv_productPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/Tv_productDescription"
+                android:layout_alignRight="@+id/Image_Product"
+                android:layout_alignParentRight="true"
+                android:textColor="@color/black"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginLeft="@dimen/_70sdp"
+                android:layout_marginRight="@dimen/_175sdp"
+                android:text="100" />
+            <TextView
+                android:id="@+id/Tv_productUpdate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/Tv_productDescription"
+                android:layout_alignRight="@+id/Image_Product"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="@dimen/_100sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:backgroundTint="@color/green"
+                android:layout_marginRight="@dimen/_80sdp"
+                android:background="@drawable/icaedit" />
+            <TextView
+                android:id="@+id/Tv_productDelete"
+                android:layout_width="wrap_content"
+                android:backgroundTint="@color/red"
+
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/Tv_productDescription"
+                android:layout_alignRight="@+id/Image_Product"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="@dimen/_200sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_20sdp"
+                android:background="@drawable/icadelete"/>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

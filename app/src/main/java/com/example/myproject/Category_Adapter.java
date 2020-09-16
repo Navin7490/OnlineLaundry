@@ -6,7 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -38,7 +37,7 @@ public class Category_Adapter extends RecyclerView.Adapter<Category_Adapter.View
     @Override
     public void onBindViewHolder(@NonNull Viewholder holder, int position) {
         holder.name.setText(prodct.get(position).getName());
-        Glide.with(context).load(prodct.get(position).getImage()).into(holder.image);
+       Glide.with(context).load(prodct.get(position).getImage()).into(holder.image);
 
 
     }
@@ -58,20 +57,97 @@ public class Category_Adapter extends RecyclerView.Adapter<Category_Adapter.View
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    String category=name.getText().toString();
+                     Category_Sharpre_Modal categorySharpreModal=new Category_Sharpre_Modal(context.getApplicationContext());
+
                     if (getAdapterPosition()==0){
-                        Intent intent=new Intent(v.getContext(), Men_Activity.class);
+                        Intent intent=new Intent(v.getContext(), View_cloth_Activity.class);
+                        intent.putExtra("category",category);
                         v.getContext().startActivity(intent);
                     }
-                    if (getAdapterPosition()==1){
-                        Intent intent=new Intent(v.getContext(), Woman_Activity.class);
+                   else if (getAdapterPosition()==1){
+                        Intent intent=new Intent(v.getContext(), View_cloth_Activity.class);
+                        intent.putExtra("category",category);
                         v.getContext().startActivity(intent);
                     }
-                    if (getAdapterPosition()==2){
-                        Intent intent=new Intent(v.getContext(), Kids_Activity.class);
+                   else if (getAdapterPosition()==2){
+                        Intent intent=new Intent(v.getContext(), View_cloth_Activity.class);
+                        intent.putExtra("category",category);
                         v.getContext().startActivity(intent);
                     }
-                    if (getAdapterPosition()==3){
-                        Intent intent=new Intent(v.getContext(), Others_Activity.class);
+                   else if (getAdapterPosition()==3){
+                        Intent intent=new Intent(v.getContext(), View_cloth_Activity.class);
+                        intent.putExtra("category",category);
+                        v.getContext().startActivity(intent);
+                    }
+                    else if (getAdapterPosition()==4){
+                        Intent intent=new Intent(v.getContext(), View_cloth_Activity.class);
+                        intent.putExtra("category",category);
+                        v.getContext().startActivity(intent);
+                    } else if (getAdapterPosition()==5){
+                        Intent intent=new Intent(v.getContext(), View_cloth_Activity.class);
+                        intent.putExtra("category",category);
+                        v.getContext().startActivity(intent);
+                    } else if (getAdapterPosition()==6){
+                        Intent intent=new Intent(v.getContext(), View_cloth_Activity.class);
+                        intent.putExtra("category",category);
+                        v.getContext().startActivity(intent);
+                    } else if (getAdapterPosition()==7){
+                        Intent intent=new Intent(v.getContext(), View_cloth_Activity.class);
+                        intent.putExtra("category",category);
+                        v.getContext().startActivity(intent);
+                    }
+                    else if (getAdapterPosition()==8){
+                        Intent intent=new Intent(v.getContext(), View_cloth_Activity.class);
+                        intent.putExtra("category",category);
+                        v.getContext().startActivity(intent);
+                    }else if (getAdapterPosition()==9){
+                        Intent intent=new Intent(v.getContext(), View_cloth_Activity.class);
+                        intent.putExtra("category",category);
+                        v.getContext().startActivity(intent);
+                    }else if (getAdapterPosition()==10){
+                        Intent intent=new Intent(v.getContext(), View_cloth_Activity.class);
+                        intent.putExtra("category",category);
+                        v.getContext().startActivity(intent);
+                    }else if (getAdapterPosition()==11){
+                        Intent intent=new Intent(v.getContext(), View_cloth_Activity.class);
+                        intent.putExtra("category",category);
+                        v.getContext().startActivity(intent);
+                    }else if (getAdapterPosition()==12){
+                        Intent intent=new Intent(v.getContext(), View_cloth_Activity.class);
+                        intent.putExtra("category",category);
+                        v.getContext().startActivity(intent);
+                    }else if (getAdapterPosition()==13){
+                        Intent intent=new Intent(v.getContext(), View_cloth_Activity.class);
+                        intent.putExtra("category",category);
+                        v.getContext().startActivity(intent);
+                    }else if (getAdapterPosition()==14){
+                        Intent intent=new Intent(v.getContext(), View_cloth_Activity.class);
+                        intent.putExtra("category",category);
+                        v.getContext().startActivity(intent);
+                    }else if (getAdapterPosition()==15){
+                        Intent intent=new Intent(v.getContext(), View_cloth_Activity.class);
+                        intent.putExtra("category",category);
+                        v.getContext().startActivity(intent);
+                    }else if (getAdapterPosition()==16){
+                        Intent intent=new Intent(v.getContext(), View_cloth_Activity.class);
+                        intent.putExtra("category",category);
+                        v.getContext().startActivity(intent);
+                    }else if (getAdapterPosition()==17){
+                        Intent intent=new Intent(v.getContext(), View_cloth_Activity.class);
+                        intent.putExtra("category",category);
+                        v.getContext().startActivity(intent);
+                    }else if (getAdapterPosition()==18){
+                        Intent intent=new Intent(v.getContext(), View_cloth_Activity.class);
+                        intent.putExtra("category",category);
+                        v.getContext().startActivity(intent);
+                    }else if (getAdapterPosition()==19){
+                        Intent intent=new Intent(v.getContext(), View_cloth_Activity.class);
+                        intent.putExtra("category",category);
+                        v.getContext().startActivity(intent);
+                    }else if (getAdapterPosition()==20){
+                        Intent intent=new Intent(v.getContext(), View_cloth_Activity.class);
+                        intent.putExtra("category",category);
                         v.getContext().startActivity(intent);
                     }
                 }

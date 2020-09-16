@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.MenuItem;
@@ -76,20 +77,27 @@ public class Feedback_Activity extends AppCompatActivity {
                 }
                 else {
                     final ProgressDialog progressDialog=new ProgressDialog(Feedback_Activity.this);
-                    progressDialog.setMessage("please wait");
                     progressDialog.show();
-
+                    progressDialog.setCanceledOnTouchOutside(false);
+                    progressDialog.setContentView(R.layout.progrees_dialog);
+                    progressDialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
                     StringRequest stringRequest=new StringRequest(Request.Method.POST, FEEDBACK_URL, new Response.Listener<String>() {
                         @Override
                         public void onResponse(String response) {
                             progressDialog.dismiss();
+
                             try {
                                 JSONObject jsonObject=new JSONObject(response);
                                 String status=jsonObject.getString("status");
+
                                 if (status.equals("Success")){
+
                                   toast=  Toast.makeText(Feedback_Activity.this, "feedback send successful", Toast.LENGTH_SHORT);
                                   toast.setGravity(Gravity.CENTER,0,0);
                                   toast.show();
+                                    Intent intent=new Intent(getApplicationContext(),Navigation_Activity.class);
+                                    startActivity(intent);
+                                    finish();
                                 }
                             } catch (JSONException e) {
                                 e.printStackTrace();

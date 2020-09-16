@@ -8,6 +8,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
+        android:background="@drawable/btndraw"
         android:layout_height="wrap_content">
 
         <ImageView
@@ -23,12 +24,13 @@
             android:id="@+id/TvproductName"
             android:layout_below="@+id/Improduct"
             android:layout_width="match_parent"
-            android:paddingLeft="@dimen/_20sdp"
-            android:layout_height="@dimen/_35sdp"
+            android:paddingLeft="@dimen/_10sdp"
+            android:layout_height="wrap_content"
             android:background="@drawable/btndraw"
             android:textColor="@color/white"
+            android:padding="@dimen/_5sdp"
             android:textSize="@dimen/_20sdp"
-            android:textStyle="bold" />
+            android:textStyle="normal" />
 
         <TextView
             android:id="@+id/TvproDescrip"
@@ -37,9 +39,10 @@
             android:layout_below="@+id/TvproductName"
             android:textColor="@color/white"
             android:textSize="@dimen/_15sdp"
-            android:paddingLeft="@dimen/_20sdp"
+            android:padding="@dimen/_5sdp"
+            android:paddingLeft="@dimen/_10sdp"
             android:background="@drawable/btndraw"
-            android:layout_height="@dimen/_30sdp"/>
+            android:layout_height="wrap_content"/>
         <TableLayout
             android:id="@+id/Tablelayout"
             android:layout_marginTop="-4dp"
@@ -60,7 +63,7 @@
                     android:text="₹"
                     android:textSize="@dimen/_12sdp"
                     android:layout_column="1"
-                    android:paddingLeft="@dimen/_12sdp"
+                    android:paddingLeft="@dimen/_14sdp"
                     android:gravity="center"
                     android:textColor="@color/white"
                     android:layout_height="wrap_content"/>
@@ -69,6 +72,7 @@
                     android:text="prie"
                     android:layout_column="2"
                     android:gravity="center"
+                    android:layout_marginTop="-1dp"
                     android:textSize="@dimen/_12sdp"
                     android:textColor="@color/white"
                     android:layout_width="wrap_content"

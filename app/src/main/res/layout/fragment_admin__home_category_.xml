@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Admin_Home_category_Fragment">
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/icaadd"
+        app:backgroundTint="#DFDFD7"
+        app:backgroundTintMode="src_atop"
+        android:layout_marginRight="@dimen/_20sdp"
+        android:layout_height="wrap_content"/>
+
+    <com.denzcoskun.imageslider.ImageSlider
+
+        android:layout_width="match_parent"
+        app:auto_cycle="true"
+        app:period="3000"
+        android:id="@+id/imageSlider"
+        android:layout_height="@dimen/_200sdp"
+        tools:ignore="MissingClass" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_below="@+id/imageSlider"
+        android:id="@+id/Rv_Category"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/Floati_Home_catego"
+        android:layout_width="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="20dp"
+        android:layout_marginEnd="40dp"
+        android:src="@drawable/icaadd"
+        app:backgroundTint="#26D4EA"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp" />
+</RelativeLayout>

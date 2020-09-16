@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue"
+    android:orientation="vertical"
+
+    android:layout_gravity="center"
+    tools:context=".Select_Payment_Method_Activity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_margin="@dimen/_50sdp"
+        android:layout_height="wrap_content">
+        <RadioGroup
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <RadioButton
+                android:id="@+id/Rbtn_GooglePay"
+                android:buttonTint="@color/blue"
+                android:textSize="@dimen/_14sdp"
+                android:textColor="@color/blue"
+                android:background="@drawable/edit"
+                android:padding="@dimen/_7sdp"
+                android:text="Google Pay"
+                android:layout_margin="@dimen/_7sdp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <RadioButton
+                android:id="@+id/Rbtn_Debit"
+                android:textSize="@dimen/_14sdp"
+                android:textColor="@color/blue"
+                android:text="Debit Card"
+                android:layout_margin="@dimen/_7sdp"
+                android:buttonTint="@color/blue"
+                android:background="@drawable/edit"
+                android:padding="@dimen/_7sdp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <RadioButton
+                android:id="@+id/Rbtn_Credit"
+                android:textColor="@color/blue"
+                android:text="Credit Card"
+                android:textSize="@dimen/_14sdp"
+                android:layout_margin="@dimen/_7sdp"
+                android:buttonTint="@color/blue"
+                android:background="@drawable/edit"
+                android:padding="@dimen/_7sdp"
+                android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+            <RadioButton
+                android:id="@+id/Rbtn_Internetbank"
+                android:textColor="@color/blue"
+                android:background="@drawable/edit"
+                android:text="Internet Banking"
+                android:buttonTint="@color/blue"
+                android:textSize="@dimen/_14sdp"
+               android:padding="@dimen/_7sdp"
+                android:layout_margin="@dimen/_7sdp"
+
+                android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        </RadioGroup>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:text="Amount Payable ₹:"
+            android:background="@color/white"
+            android:padding="@dimen/_7sdp"
+            android:textColor="@color/blue"
+            android:textSize="@dimen/_14sdp"
+            android:layout_width="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/Tv_amoutapayable"
+            android:text="850"
+            android:background="@color/white"
+            android:padding="@dimen/_7sdp"
+            android:layout_marginLeft="@dimen/_122sdp"
+            android:textColor="@color/blue"
+            android:textSize="@dimen/_14sdp"
+            android:gravity="left"
+            android:layout_width="@dimen/_80sdp"
+            android:layout_alignParentBottom="true"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/Tv_Next"
+            android:text="Next"
+            android:background="@color/white"
+            android:padding="@dimen/_7sdp"
+            android:textStyle="bold"
+            android:layout_marginLeft="@dimen/_200sdp"
+            android:textColor="@color/blue"
+            android:gravity="center"
+            android:textSize="@dimen/_14sdp"
+            android:layout_width="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/Tv_Confirm"
+            android:text="Confirm Order"
+            android:background="@color/white"
+            android:padding="@dimen/_7sdp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            android:layout_marginLeft="@dimen/_200sdp"
+            android:textColor="@color/blue"
+            android:gravity="center"
+            android:textSize="@dimen/_14sdp"
+            android:layout_width="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_height="wrap_content"/>
+    </RelativeLayout>
+
+
+</LinearLayout>

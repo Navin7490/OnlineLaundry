@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    tools:context=".Admin_Login_Activity">
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardview"
+        app:cardElevation="@dimen/_10sdp"
+        android:elevation="@dimen/_10sdp"
+        android:layout_margin="@dimen/_10sdp"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_250sdp">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_50sdp"
+        android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/Et_A_LEmail"
+            android:layout_width="match_parent"
+            android:hint="Enter Email"
+
+            android:layout_height="wrap_content"/>
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:id="@+id/EtAddPassord"
+        android:layout_marginTop="@dimen/_120sdp"
+        android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/Et_A_LPassword"
+            android:layout_width="match_parent"
+            android:hint="Enter Password"
+            android:inputType="textPassword"
+            android:enabled="true"
+            android:layout_height="wrap_content"/>
+    </com.google.android.material.textfield.TextInputLayout>
+    <Button
+        android:text="Sign In"
+        android:background="@color/blue"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_200sdp"
+        android:layout_below="@+id/EtAddPassord"
+        android:onClick="login"
+        android:textColor="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="NotSibling,UnknownId" />
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

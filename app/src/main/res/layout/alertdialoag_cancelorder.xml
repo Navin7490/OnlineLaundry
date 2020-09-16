@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:gravity="center"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_120sdp">
+        <TextView
+            android:text="Cancel"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:id="@+id/delet"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:textSize="@dimen/_16sdp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/TvSelecti"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_width="wrap_content"
+            android:textSize="@dimen/_14sdp"
+            android:layout_below="@+id/delet"
+            android:textColor="@color/black"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:text="Do you Want to Cancel Order ?"
+            android:layout_height="wrap_content"
+            tools:ignore="MissingConstraints" />
+        <TextView
+            android:id="@+id/TV_Noc"
+            android:text="No"
+            android:textSize="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_21sdp"
+            android:layout_below="@+id/TvSelecti"
+            android:layout_marginLeft="@dimen/_150sdp"
+            android:layout_width="wrap_content"
+            android:textColor="@color/black"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/TV_Yesc"
+            android:text="Yes"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_21sdp"
+            android:layout_below="@+id/TvSelecti"
+            android:layout_marginLeft="@dimen/_200sdp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </RelativeLayout>
+</RelativeLayout>

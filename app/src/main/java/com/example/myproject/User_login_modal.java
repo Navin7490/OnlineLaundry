@@ -32,7 +32,16 @@ public class User_login_modal {
         sharedPreferencesLogin.edit().clear().commit();
     }
 
-    private  String LName, LEmail,LPassword;
+    public String getLimage() {
+        return Limage;
+    }
+
+    public void setLimage(String limage) {
+        Limage = limage;
+        sharedPreferencesLogin.edit().putString("LImage",limage).commit();
+    }
+
+    private  String Limage,LName, LEmail,LPassword;
 
     public String getLName() {
         return LName;

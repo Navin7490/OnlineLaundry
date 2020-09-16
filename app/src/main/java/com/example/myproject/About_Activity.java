@@ -16,6 +16,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -28,15 +29,20 @@ public class About_Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about_);
+//        MobileAds.initialize(this,"ca-app-pub-3940256099942544/6300978111");
+//        mAdView = findViewById(R.id.adView);
+//        AdRequest adRequest = new AdRequest.Builder().build();
+//        mAdView.loadAd(adRequest);
         tvabout=findViewById(R.id.TvAbout);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("About");
 
 
         final ProgressDialog progressDialog=new ProgressDialog(this);
-        progressDialog.setMessage("please wait");
         progressDialog.show();
-
+        progressDialog.setCanceledOnTouchOutside(false);
+        progressDialog.setContentView(R.layout.progrees_dialog);
+        progressDialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
         StringRequest stringRequest=new StringRequest(Request.Method.POST, ABOUT_URL, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {

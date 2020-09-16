@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_marginTop="@dimen/_5sdp"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:background="@drawable/order"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints">
+
+       <TableLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
+           <TableRow
+               android:layout_height="wrap_content"
+               android:layout_width="match_parent"
+               android:padding="@dimen/_5sdp"
+               android:background="@drawable/order">
+               <TextView
+                   android:layout_marginLeft="@dimen/_5sdp"
+                   android:textColor="@color/blue"
+                   android:textSize="@dimen/_14sdp"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="Order ID :"
+                   />
+               <TextView
+                   android:textColor="@color/blue"
+                   android:textSize="@dimen/_14sdp"
+                   android:id="@+id/Tv_OrderId"
+                   android:layout_width="@dimen/_210sdp"
+                   android:layout_height="wrap_content"
+                   />
+
+           </TableRow>
+           <TableRow
+               android:layout_height="wrap_content"
+               android:layout_width="match_parent"
+               android:padding="@dimen/_5sdp"
+               android:background="@drawable/order">
+               <TextView
+                   android:layout_marginLeft="@dimen/_5sdp"
+                   android:textColor="@color/blue"
+                   android:textSize="@dimen/_14sdp"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="Order Date :"
+                   />
+               <TextView
+                   android:textColor="@color/blue"
+                   android:textSize="@dimen/_14sdp"
+                   android:id="@+id/Tv_Orderdate"
+                   android:layout_width="@dimen/_210sdp"
+                   android:layout_height="wrap_content"
+                   />
+
+           </TableRow>
+           <TableRow
+               android:layout_height="wrap_content"
+               android:layout_width="match_parent"
+               android:padding="@dimen/_5sdp"
+
+               android:background="@drawable/order">
+               <TextView
+                   android:layout_marginLeft="@dimen/_5sdp"
+                   android:textColor="@color/blue"
+                   android:textSize="@dimen/_14sdp"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="Items :"
+                   />
+               <TextView
+                   android:textColor="@color/blue"
+                   android:textSize="@dimen/_14sdp"
+                   android:id="@+id/TV_Items"
+                   android:layout_width="@dimen/_210sdp"
+                   android:layout_height="wrap_content"
+                   android:text=" party wear lehengacotton shirt,silki saree"/>
+
+           </TableRow>
+           <TableRow
+               android:layout_height="match_parent"
+               android:layout_width="match_parent"
+               android:padding="@dimen/_5sdp"
+
+               android:background="@drawable/order">
+               <TextView
+                   android:layout_marginLeft="@dimen/_5sdp"
+
+                   android:textColor="@color/blue"
+                   android:textSize="@dimen/_14sdp"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="Item Price :"
+                   />
+               <TextView
+                   android:textColor="@color/blue"
+                   android:textSize="@dimen/_14sdp"
+                   android:id="@+id/TV_ItemPrice"
+                   android:layout_width="@dimen/_210sdp"
+                   android:layout_height="wrap_content"
+                   android:text="220,100"/>
+
+           </TableRow>
+           <TableRow
+               android:layout_height="match_parent"
+               android:layout_width="match_parent"
+               android:padding="@dimen/_5sdp"
+
+               android:background="@drawable/order">
+               <TextView
+                   android:layout_marginLeft="@dimen/_5sdp"
+
+                   android:textColor="@color/blue"
+                   android:textSize="@dimen/_14sdp"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="Item Qty :"
+                   />
+               <TextView
+                   android:textColor="@color/blue"
+                   android:textSize="@dimen/_14sdp"
+                   android:id="@+id/TV_ItemQty"
+                   android:layout_width="@dimen/_210sdp"
+                   android:layout_height="wrap_content"
+                   android:text="2,4"/>
+
+           </TableRow>
+           <TableRow
+               android:layout_height="match_parent"
+               android:layout_width="match_parent"
+               android:padding="@dimen/_5sdp"
+
+               android:background="@drawable/order">
+               <TextView
+                   android:layout_marginLeft="@dimen/_5sdp"
+
+                   android:textColor="@color/blue"
+                   android:textSize="@dimen/_14sdp"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="Total Price :"
+                   />
+               <TextView
+                   android:textColor="@color/blue"
+                   android:textSize="@dimen/_14sdp"
+                   android:id="@+id/TV_TotalPriceitem"
+                   android:layout_width="@dimen/_210sdp"
+                   android:layout_height="wrap_content"
+                   android:text="960"/>
+
+           </TableRow>
+           <TableRow
+               android:layout_height="match_parent"
+               android:layout_width="match_parent"
+               android:padding="@dimen/_5sdp"
+
+               android:background="@drawable/order">
+               <TextView
+                   android:layout_marginLeft="@dimen/_5sdp"
+
+                   android:textColor="@color/blue"
+                   android:textSize="@dimen/_14sdp"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="PickUp Date :"
+                   />
+               <TextView
+                   android:textColor="@color/blue"
+                   android:textSize="@dimen/_14sdp"
+                   android:id="@+id/TV_Pickupdate"
+                   android:layout_width="@dimen/_210sdp"
+                   android:layout_height="wrap_content"
+                   android:text="24/05/2020"/>
+
+           </TableRow>
+           <TableRow
+               android:padding="@dimen/_5sdp"
+               android:layout_height="match_parent"
+               android:layout_width="match_parent"
+               android:background="@drawable/order">
+               <TextView
+                   android:layout_marginLeft="@dimen/_5sdp"
+
+                   android:textColor="@color/blue"
+                   android:textSize="@dimen/_14sdp"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="PickUp Time :"
+                   />
+               <TextView
+                   android:textColor="@color/blue"
+                   android:textSize="@dimen/_14sdp"
+                   android:id="@+id/TV_Pickuptime"
+                   android:layout_width="@dimen/_210sdp"
+                   android:layout_height="wrap_content"
+                   android:text="9:00"/>
+
+           </TableRow>
+           <TableRow
+               android:layout_height="match_parent"
+               android:layout_width="match_parent"
+               android:padding="@dimen/_5sdp"
+
+               android:background="@drawable/order">
+               <TextView
+                   android:layout_marginLeft="@dimen/_5sdp"
+
+                   android:textColor="@color/blue"
+                   android:textSize="@dimen/_14sdp"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="Status :"
+                   />
+               <TextView
+                   android:background="#F81025"
+                   android:textColor="@color/blue"
+                   android:textSize="@dimen/_14sdp"
+                   android:id="@+id/TV_Status"
+                   android:layout_width="@dimen/_210sdp"
+                   android:layout_height="wrap_content"
+                   android:text="Ready For Delivery"/>
+
+           </TableRow>
+       </TableLayout>
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_400sdp">
+        <TextView
+            android:id="@+id/Tv_addproduct"
+            android:text="Add to Product"
+            android:layout_margin="@dimen/_10sdp"
+            android:textSize="@dimen/_20sdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <Spinner
+            android:id="@+id/Spinner_Category"
+            android:gravity="center"
+            android:visibility="gone"
+            android:layout_margin="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_below="@+id/Tv_addproduct"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <EditText
+            android:id="@+id/Et_ProduName"
+            android:layout_margin="@dimen/_10sdp"
+            android:background="@drawable/edit_text_bacground"
+            android:layout_below="@+id/Spinner_Category"
+            android:padding="@dimen/_5sdp"
+            android:layout_width="match_parent"
+            android:hint="Enter Product name"
+            android:layout_height="@dimen/_30sdp"/>
+        <EditText
+            android:id="@+id/Et_Description"
+            android:layout_below="@+id/Et_ProduName"
+            android:hint="Enter Description"
+            android:layout_margin="@dimen/_10sdp"
+            android:background="@drawable/edit_text_bacground"
+            android:padding="@dimen/_5sdp"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_30sdp"/>
+        <EditText
+            android:id="@+id/Et_Price"
+            android:layout_below="@+id/Et_Description"
+            android:layout_width="match_parent"
+            android:inputType="number"
+            android:layout_margin="@dimen/_10sdp"
+            android:background="@drawable/edit_text_bacground"
+            android:padding="@dimen/_5sdp"
+            android:hint="Enter Price"
+            android:layout_height="@dimen/_30sdp"/>
+        <TextView
+            android:id="@+id/Tv_Chooseimage"
+            android:layout_marginTop="@dimen/_25sdp"
+            android:text="Choose Image"
+            android:layout_margin="@dimen/_10sdp"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_below="@+id/Et_Price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <ImageView
+            android:id="@+id/Im_Product"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/clothclean"
+            android:layout_below="@+id/Et_Price"
+            android:layout_marginLeft="@dimen/_150sdp"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_50sdp"/>
+        <Button
+            android:layout_below="@+id/Tv_Chooseimage"
+            android:text="Cancel"
+            android:background="@color/red"
+            android:id="@+id/Btn_CancelProduct"
+            android:layout_marginTop="@dimen/_40sdp"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <Button
+            android:id="@+id/Btn_AddProduct"
+            android:text="Add"
+            android:background="@color/green"
+            android:layout_marginTop="@dimen/_40sdp"
+            android:layout_marginLeft="@dimen/_150sdp"
+            android:layout_below="@+id/Tv_Chooseimage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </RelativeLayout>
+</RelativeLayout>

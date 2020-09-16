@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<item android:id="@+id/Category"
+    android:icon="@drawable/icahome"
+    android:title="Home" />
+<!--    <item android:id="@+id/Product"-->
+<!--        android:icon="@drawable/ic_product"-->
+<!--        android:title="Product" />-->
+    <item android:id="@+id/Order"
+        android:icon="@drawable/icavieworder"
+    android:title="Orders"/>
+    <item android:id="@+id/User"
+        android:icon="@drawable/icaviewuser"
+    android:title="Users"/>
+    <item android:id="@+id/Me"
+        android:icon="@drawable/icameprofile"
+    android:title="Me"/>
+</menu>

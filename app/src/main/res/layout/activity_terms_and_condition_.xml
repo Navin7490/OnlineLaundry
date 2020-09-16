@@ -10,7 +10,7 @@
         android:textSize="@dimen/_16sdp"
         android:layout_margin="@dimen/_7sdp"
         android:layout_width="match_parent"
-        android:id="@+id/tvterms"
+        android:id="@+id/Tvs"
         android:layout_height="wrap_content"/>
 
 </RelativeLayout>

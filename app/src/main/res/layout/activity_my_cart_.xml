@@ -3,13 +3,69 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
     tools:context=".My_cart_Activity">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/Rvcart"
         android:layout_width="match_parent"
+        android:layout_height="@dimen/_480sdp"/>
+        </LinearLayout>
+    </ScrollView>
+   <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <TextView
+        android:id="@+id/Tv_totalpricetitle"
+        android:layout_width="wrap_content"
+        android:text="  TOTAL ₹:"
+        android:paddingTop="@dimen/_8sdp"
+        android:paddingLeft="@dimen/_5sdp"
+        android:paddingBottom="@dimen/_7sdp"
+        android:textSize="@dimen/_14sdp"
+        android:background="@color/white"
+        android:layout_alignParentBottom="true"
+        android:textColor="@color/blue"
+        android:textStyle="bold"
         android:layout_height="wrap_content"/>
+       <TextView
+           android:id="@+id/Tv_totalprice"
+           android:layout_width="@dimen/_100sdp"
+           android:text=""
+           android:layout_toRightOf="@+id/Tv_totalpricetitle"
+           android:paddingTop="@dimen/_8sdp"
+           android:paddingLeft="@dimen/_3sdp"
+           android:paddingBottom="@dimen/_7sdp"
+           android:textSize="@dimen/_14sdp"
+           android:background="@color/white"
+           android:layout_alignParentBottom="true"
+           android:textColor="@color/blue"
+           android:textStyle="bold"
+           android:layout_height="wrap_content"/>
+       <TextView
+           android:id="@+id/Tv_totalplaceorser"
+           android:layout_width="match_parent"
+           android:text="CONTINUE"
+           android:layout_toRightOf="@+id/Tv_totalprice"
+           android:paddingTop="@dimen/_8sdp"
+           android:textSize="@dimen/_14sdp"
+           android:paddingRight="@dimen/_5sdp"
+           android:paddingBottom="@dimen/_7sdp"
+           android:background="@color/blue"
+           android:gravity="center"
+           android:textStyle="normal"
+           android:layout_alignParentBottom="true"
+           android:textColor="@color/white"
+           android:layout_height="wrap_content"/>
+
+</RelativeLayout>
 
 </LinearLayout>

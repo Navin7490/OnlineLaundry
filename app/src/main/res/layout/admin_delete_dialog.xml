@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_110sdp">
+
+    <TextView
+        android:id="@+id/Tv_delete"
+        android:layout_width="match_parent"
+        android:textSize="@dimen/_18sdp"
+        android:layout_margin="@dimen/_20sdp"
+        android:text="Delete item ?"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:id="@+id/Tv_No"
+        android:text="No"
+        android:layout_below="@+id/Tv_delete"
+        android:layout_width="wrap_content"
+        android:layout_marginLeft="@dimen/_150sdp"
+        android:textSize="@dimen/_14sdp"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:id="@+id/Tv_Yes"
+        android:text="Yes"
+        android:layout_marginLeft="@dimen/_50sdp"
+        android:textSize="@dimen/_14sdp"
+        android:layout_marginTop="@dimen/_63sdp"
+        android:layout_alignLeft="@+id/Tv_No"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    </RelativeLayout>
+
+</RelativeLayout>

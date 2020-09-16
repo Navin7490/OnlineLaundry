@@ -1,8 +1,7 @@
 package com.example.myproject;
 
 public class Mycard_modal {
-    public Mycard_modal(String name, String descri, String price) {
-    }
+
 
     public String getName() {
         return name;
@@ -36,5 +35,22 @@ public class Mycard_modal {
         this.image = image;
     }
 
-    String image, name,quntity,price;
+    public String getQuntyupdate() {
+        return quntyupdate;
+    }
+
+    public String setQuntyupdate(String quntyupdate) {
+        this.quntyupdate = quntyupdate;
+        return quntyupdate;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    String id,image, name,quntity,price,quntyupdate;
 }

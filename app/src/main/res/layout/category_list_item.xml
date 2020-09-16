@@ -27,7 +27,7 @@
             <TextView
                 android:id="@+id/Tv_category"
                 android:layout_width="wrap_content"
-                android:text="suit"
+                android:textColor="@color/blue"
                 android:textSize="@dimen/_16sdp"
                 android:layout_gravity="center"
                 android:layout_height="wrap_content"/>
