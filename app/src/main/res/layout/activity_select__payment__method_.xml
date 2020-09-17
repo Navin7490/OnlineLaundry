@@ -4,68 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/blue"
+    android:background="@color/white"
     android:orientation="vertical"
 
     android:layout_gravity="center"
     tools:context=".Select_Payment_Method_Activity">
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:gravity="center"
-        android:layout_margin="@dimen/_50sdp"
-        android:layout_height="wrap_content">
-        <RadioGroup
-            android:gravity="center"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <RadioButton
-                android:id="@+id/Rbtn_GooglePay"
-                android:buttonTint="@color/blue"
-                android:textSize="@dimen/_14sdp"
-                android:textColor="@color/blue"
-                android:background="@drawable/edit"
-                android:padding="@dimen/_7sdp"
-                android:text="Google Pay"
-                android:layout_margin="@dimen/_7sdp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-            <RadioButton
-                android:id="@+id/Rbtn_Debit"
-                android:textSize="@dimen/_14sdp"
-                android:textColor="@color/blue"
-                android:text="Debit Card"
-                android:layout_margin="@dimen/_7sdp"
-                android:buttonTint="@color/blue"
-                android:background="@drawable/edit"
-                android:padding="@dimen/_7sdp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-            <RadioButton
-                android:id="@+id/Rbtn_Credit"
-                android:textColor="@color/blue"
-                android:text="Credit Card"
-                android:textSize="@dimen/_14sdp"
-                android:layout_margin="@dimen/_7sdp"
-                android:buttonTint="@color/blue"
-                android:background="@drawable/edit"
-                android:padding="@dimen/_7sdp"
-                android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-            <RadioButton
-                android:id="@+id/Rbtn_Internetbank"
-                android:textColor="@color/blue"
-                android:background="@drawable/edit"
-                android:text="Internet Banking"
-                android:buttonTint="@color/blue"
-                android:textSize="@dimen/_14sdp"
-               android:padding="@dimen/_7sdp"
-                android:layout_margin="@dimen/_7sdp"
-
-                android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-        </RadioGroup>
-    </RelativeLayout>
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <TextView
@@ -73,6 +17,7 @@
             android:background="@color/white"
             android:padding="@dimen/_7sdp"
             android:textColor="@color/blue"
+            android:layout_marginLeft="@dimen/_10sdp"
             android:textSize="@dimen/_14sdp"
             android:layout_width="wrap_content"
             android:layout_alignParentBottom="true"
@@ -82,13 +27,101 @@
             android:text="850"
             android:background="@color/white"
             android:padding="@dimen/_7sdp"
-            android:layout_marginLeft="@dimen/_122sdp"
             android:textColor="@color/blue"
             android:textSize="@dimen/_14sdp"
             android:gravity="left"
             android:layout_width="@dimen/_80sdp"
             android:layout_alignParentBottom="true"
             android:layout_height="wrap_content"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_height="wrap_content">
+<androidx.cardview.widget.CardView
+    app:cardCornerRadius="@dimen/_2sdp"
+    app:cardElevation="@dimen/_10sdp"
+    android:layout_marginLeft="@dimen/_10sdp"
+    android:layout_width="wrap_content"
+    android:background="@color/blue"
+    android:layout_marginBottom="@dimen/_5sdp"
+    android:layout_marginTop="@dimen/_10sdp"
+    android:layout_height="wrap_content">
+    <ImageView
+        android:id="@+id/Im_Pay_Paytm"
+        android:src="@drawable/patmbutton"
+        android:background="@color/white"
+        android:layout_margin="@dimen/_10sdp"
+        android:layout_width="@dimen/_70sdp"
+        android:layout_height="@dimen/_70sdp"/>
+</androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            app:cardCornerRadius="@dimen/_2sdp"
+            app:cardElevation="@dimen/_10sdp"
+            android:layout_width="wrap_content"
+            android:background="@color/blue"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/Im_Pay_Gpay"
+                android:src="@drawable/gpay"
+                android:background="@color/white"
+                android:layout_margin="@dimen/_10sdp"
+                android:layout_width="@dimen/_70sdp"
+                android:layout_height="@dimen/_70sdp"/>
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            app:cardCornerRadius="@dimen/_2sdp"
+            app:cardElevation="@dimen/_10sdp"
+            android:layout_width="wrap_content"
+            android:background="@color/blue"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/Im_Pay_Phone"
+                android:src="@drawable/phonepay"
+                android:adjustViewBounds="true"
+                android:background="@color/white"
+                android:layout_margin="@dimen/_10sdp"
+                android:layout_width="@dimen/_70sdp"
+                android:layout_height="@dimen/_70sdp"/>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+        <androidx.cardview.widget.CardView
+            app:cardCornerRadius="@dimen/_2sdp"
+            app:cardElevation="@dimen/_10sdp"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_width="wrap_content"
+            android:background="@color/blue"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/Im_Pay_PayPaypal"
+                android:src="@drawable/imagepaypal"
+                android:background="@color/white"
+                android:layout_margin="@dimen/_10sdp"
+                android:layout_width="@dimen/_70sdp"
+                android:layout_height="@dimen/_70sdp"/>
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
         <TextView
             android:id="@+id/Tv_Next"
             android:text="Next"

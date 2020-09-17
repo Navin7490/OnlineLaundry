@@ -14,6 +14,7 @@ import android.util.Log;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -33,38 +34,47 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Select_Payment_Method_Activity extends AppCompatActivity {
-    RadioButton rbtngooglePay,rbtndebitcard,rbtncreditcard,rbtninterbank;
     TextView tvamount,tvconfirm,tvnext;
+    ImageView btnPaytm,btnGpay,btnPhone,btnpaypal;
     Toast toast;
     String Amountpay;
     ProgressDialog progressDialog;
     String oredrdate, username,email,mobile,address,items,itemqty,itemprice,totalprice,pickupdate,pickuptime,status;
     String ORDER_URL="http://192.168.43.65/laundry_service/api/insert_order.php";
     Intent intent;
+   //paytm//
+   public static final String PAYTM_PACKAGE_NAME = "net.one97.paytm";
 
+    //end//
     /// google pay payment//
     public static final String GOOGLE_PAY_PACKAGE_NAME = "com.google.android.apps.nbu.paisa.user";
     int GOOGLE_PAY_REQUEST_CODE = 123;
     Uri uri;
     String upiid = "tinu1316@oksbi";
     String name = "Navin";
-    String note = "Laundry service";
+    String note = "Paying for Laundry service";
     String staus;
     // end google pay//
+    public static final String PHONE_PAY_PACKAGE_NAME="com.phonepe.app";
+
+    public static final String PAYPAL_PAY_PACKAGE_NAME="com.paypal.android.p2pmobile";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select__payment__method_);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("Select Payment Method");
+        getSupportActionBar().setTitle("Payment");
 
-        rbtngooglePay=findViewById(R.id.Rbtn_GooglePay);
-        rbtndebitcard=findViewById(R.id.Rbtn_Debit);
-        rbtncreditcard=findViewById(R.id.Rbtn_Credit);
-        rbtninterbank=findViewById(R.id.Rbtn_Internetbank);
+        btnPaytm=findViewById(R.id.Im_Pay_Paytm);
+        btnGpay=findViewById(R.id.Im_Pay_Gpay);
+        btnPhone=findViewById(R.id.Im_Pay_Phone);
+        btnpaypal=findViewById(R.id.Im_Pay_PayPaypal);
+
+
         tvamount=findViewById(R.id.Tv_amoutapayable);
         tvconfirm=findViewById(R.id.Tv_Confirm);
         tvnext=findViewById(R.id.Tv_Next);
+        tvnext.setVisibility(View.GONE);
         User_Order_Modal order=new User_Order_Modal(Select_Payment_Method_Activity.this);
         Amountpay=  order.shareprefmyorder.getString("total_price",null);
         tvamount.setText(Amountpay);
@@ -85,43 +95,49 @@ public class Select_Payment_Method_Activity extends AppCompatActivity {
         progressDialog.setCanceledOnTouchOutside(false);
         progressDialog.setContentView(R.layout.progrees_dialog);
         progressDialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
-        tvnext.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (!rbtngooglePay.isChecked()&&!rbtndebitcard.isChecked()&&!rbtncreditcard.isChecked()
-                        &&!rbtninterbank.isChecked()){
-                    toast=Toast.makeText(Select_Payment_Method_Activity.this, "Select payment Method", Toast.LENGTH_SHORT);
-                    toast.show();
-                    toast.setGravity(Gravity.CENTER,0,0);
 
+        btnGpay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (!totalprice.equals("")) {
+
+                    uri = getUPIPaymentUri(name, upiid, note, totalprice);
+                    payWithGPay();
                 }
-
-
-
-
             }
         });
-        rbtngooglePay.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                rbtngooglePay.isChecked();
-                tvconfirm.setVisibility(View.VISIBLE);
-                tvconfirm.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
 
-                        if (!totalprice.equals("")) {
+       btnPaytm.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View view) {
+               if (!totalprice.equals("")){
+                   uri=getUPIPaymentUri(name,upiid,note,totalprice);
+                   PayWithPaytm();
+               }
 
-                            uri = getUPIPaymentUri(name, upiid, note, totalprice);
-                            payWithGPay();
-                        }
+           }
+       });
 
-                    }
-                });
+       btnPhone.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View view) {
+               if (!totalprice.equals("")){
+                   uri=getUPIPaymentUri(name,upiid,note,totalprice);
+                   PayWithPhonePay();
+               }
+           }
+       });
 
-            }
-        });
-//
+
+       btnpaypal.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View view) {
+               if (!totalprice.equals("")){
+                   uri=getUPIPaymentUri(name,upiid,note,totalprice);
+                   PayWithPayPal();
+               }
+           }
+       });
 
 
     }
@@ -167,6 +183,75 @@ public class Select_Payment_Method_Activity extends AppCompatActivity {
         }
     }
 
+    private void PayWithPaytm() {
+        if (isAnstalledPaytm(this, PAYTM_PACKAGE_NAME)) {
+
+            Intent i = new Intent(Intent.ACTION_VIEW);
+            i.setData(uri);
+            i.setPackage(PAYTM_PACKAGE_NAME);
+            startActivityForResult(i, 123);
+        } else {
+            Toast.makeText(this, "Paytm is not istalled please install and try again", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+
+    private void PayWithPhonePay() {
+        if (isAnstalledPhonePay(this, PHONE_PAY_PACKAGE_NAME)) {
+
+            Intent i = new Intent(Intent.ACTION_VIEW);
+            i.setData(uri);
+            i.setPackage(PHONE_PAY_PACKAGE_NAME);
+            startActivityForResult(i, 123);
+        } else {
+            Toast.makeText(this, "Phone pay is not istalled please install and try again", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+
+    private void PayWithPayPal() {
+        if (isAnstalledPayPal(this, PAYPAL_PAY_PACKAGE_NAME)) {
+
+            Intent i = new Intent(Intent.ACTION_VIEW);
+            i.setData(uri);
+            i.setPackage(PAYPAL_PAY_PACKAGE_NAME);
+            startActivityForResult(i, 123);
+        } else {
+            Toast.makeText(this, "PayPal is not istalled please install and try again", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+
+    public static boolean isAnstalledPayPal(Context context, String PackegeName) {
+        try {
+            context.getPackageManager().getApplicationInfo(PackegeName, 0);
+            return true;
+        } catch (PackageManager.NameNotFoundException e) {
+            return false;
+
+        }
+    }
+
+    public static boolean isAnstalledPhonePay(Context context, String PackegeName) {
+        try {
+            context.getPackageManager().getApplicationInfo(PackegeName, 0);
+            return true;
+        } catch (PackageManager.NameNotFoundException e) {
+            return false;
+
+        }
+    }
+
+
+    public static boolean isAnstalledPaytm(Context context, String PackegeName) {
+        try {
+            context.getPackageManager().getApplicationInfo(PackegeName, 0);
+            return true;
+        } catch (PackageManager.NameNotFoundException e) {
+            return false;
+
+        }
+    }
 
     private static Uri getUPIPaymentUri(String name, String UPIId, String note, String amount) {
           return new Uri.Builder()
