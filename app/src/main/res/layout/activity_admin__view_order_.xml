@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Admin_ViewOrder_Activity">
+    tools:context="navin.laundry.myproject.Admin_ViewOrder_Activity">
 
     <androidx.core.widget.NestedScrollView
         android:id="@+id/Scroll"

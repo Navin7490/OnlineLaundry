@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Admin_Home_Profile_Fragment">
+    tools:context="navin.laundry.myproject.Admin_Home_Profile_Fragment">
     <View
         android:id="@+id/image"
         android:background="@drawable/clothclean"

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/blue"
     android:gravity="center"
-    tools:context=".Signup_Activity">
+    tools:context="navin.laundry.myproject.Signup_Activity">
 
 
     <RelativeLayout

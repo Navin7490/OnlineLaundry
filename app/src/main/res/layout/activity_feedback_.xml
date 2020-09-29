@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    tools:context=".Feedback_Activity">
+    tools:context="navin.laundry.myproject.Feedback_Activity">
 
     <ScrollView
         android:layout_width="match_parent"

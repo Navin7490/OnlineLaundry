@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Add_to_cart_Activity">
+    tools:context="navin.laundry.myproject.Add_to_cart_Activity">
 
 <ScrollView
     android:layout_width="match_parent"

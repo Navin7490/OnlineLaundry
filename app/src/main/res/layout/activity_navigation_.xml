@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:id="@+id/drawer"
     android:layout_height="match_parent"
-    tools:context=".Navigation_Activity">
+    tools:context="navin.laundry.myproject.Navigation_Activity">
 <!--<androidx.swiperefreshlayout.widget.SwipeRefreshLayout-->
 <!--    android:layout_width="match_parent"-->
 <!--    android:id="@+id/refreshlayout"-->
@@ -36,12 +36,12 @@
         android:textColor="@color/blue"
         android:textSize="@dimen/_20sdp"
         android:textStyle="italic" />
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/Rvcategory"
+    <FrameLayout
+        android:id="@+id/Fram_cate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-    </androidx.recyclerview.widget.RecyclerView>
+    </FrameLayout>
 
 
     </LinearLayout>

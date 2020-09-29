@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Admin_Home_Activity">
+    tools:context="navin.laundry.myproject.Admin_Home_Activity">
     <FrameLayout
         android:id="@+id/Frame_layout"
         android:layout_width="match_parent"

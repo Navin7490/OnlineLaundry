@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MyOrder_Activity">
+    tools:context="navin.laundry.myproject.MyOrder_Activity">
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/Rv_Order"
         android:layout_width="match_parent"

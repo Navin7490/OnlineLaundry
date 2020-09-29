@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Terms_and_condition_Activity">
+    tools:context="navin.laundry.myproject.Terms_and_condition_Activity">
     <TextView
         android:textColor="@color/black"
         android:textSize="@dimen/_16sdp"

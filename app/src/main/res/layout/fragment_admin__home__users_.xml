@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Admin_Home_Users_Fragment">
+    tools:context="navin.laundry.myproject.Admin_Home_Users_Fragment">
 <androidx.recyclerview.widget.RecyclerView
     android:id="@+id/Rv_A_User"
     android:layout_width="match_parent"

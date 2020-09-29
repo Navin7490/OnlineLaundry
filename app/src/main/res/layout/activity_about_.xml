@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_height="match_parent"
-    tools:context=".About_Activity">
+    tools:context="navin.laundry.myproject.About_Activity">
     <TextView
         android:id="@+id/TvAbout"
         android:layout_width="match_parent"
