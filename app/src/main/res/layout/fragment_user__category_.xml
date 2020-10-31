@@ -3,10 +3,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".User_Category_Fragment">
-
+    <com.denzcoskun.imageslider.ImageSlider
+        android:layout_width="match_parent"
+        app:auto_cycle="true"
+        app:period="2000"
+        android:id="@+id/imageSlider"
+        android:layout_height="@dimen/_200sdp"/>
+    <TextView
+        android:id="@+id/Tvmaruee"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_7sdp"
+        android:scrollHorizontally="true"
+        android:singleLine="true"
+        android:gravity="center"
+        android:layout_below="@+id/imageSlider"
+        android:textColor="@color/blue"
+        android:textSize="@dimen/_20sdp"
+        android:textStyle="italic" />
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/Rv_UsrCate"
+        android:layout_below="@+id/Tvmaruee"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 

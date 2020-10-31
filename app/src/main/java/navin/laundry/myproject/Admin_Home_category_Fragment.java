@@ -20,6 +20,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -83,6 +84,7 @@ public class Admin_Home_category_Fragment extends Fragment {
     private  static final int PICKE_IMAGE=1;
     Uri imageUri;
     Bitmap bitmap;
+    TextView tvoffer;
     String ADD_CATEGORY_URL="https://navindeveloperinfo.000webhostapp.com/laundry_service/Add_category.php";
    // String ADD_CATEGORY_URL="http://192.168.43.65/laundry_service/Add_category.php";
     String imagedata;
@@ -122,7 +124,6 @@ public class Admin_Home_category_Fragment extends Fragment {
         progressDialog=new ProgressDialog(getContext());
         progressDialog.setMessage("Please Wait");
         progressDialog.setCanceledOnTouchOutside(false);
-        progressDialog.show();
         dialog=new Dialog(getContext());
         dialog.setContentView(R.layout.admin_add_category_dialog);
         dialog.setCanceledOnTouchOutside(false);
@@ -130,7 +131,6 @@ public class Admin_Home_category_Fragment extends Fragment {
         StringRequest stringpager = new StringRequest(Request.Method.GET, VIEWPAGER_URL, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                progressDialog.dismiss();
                 try {
                     JSONObject jsonObject = new JSONObject(response);
                     JSONArray jsonArray = jsonObject.getJSONArray("view_pager");
@@ -155,7 +155,6 @@ public class Admin_Home_category_Fragment extends Fragment {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                progressDialog.dismiss();
                 Toast.makeText(getContext(), "Connection fail", Toast.LENGTH_SHORT).show();
 
             }
@@ -171,6 +170,7 @@ public class Admin_Home_category_Fragment extends Fragment {
         // Inflate the layout for this fragment
         v= inflater.inflate(R.layout.fragment_admin__home_category_, container, false);
         imageSlider=v.findViewById(R.id.imageSlider);
+        tvoffer=v.findViewById(R.id.Tv_A_maruee);
         floatingACategory=v.findViewById(R.id.Floati_Home_catego);
         flotiAViewPage=v.findViewById(R.id.Add_Flo_Addviwpage);
         recyclerView=v.findViewById(R.id.Rv_Category);
@@ -179,6 +179,7 @@ public class Admin_Home_category_Fragment extends Fragment {
         recyclerView.setLayoutManager(layoutManager);
         product=new ArrayList<>();
 
+
        flotiAViewPage.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View view) {
@@ -186,11 +187,11 @@ public class Admin_Home_category_Fragment extends Fragment {
            }
        });
 
-
+       progressDialog.show();
         StringRequest categoryRequest=new StringRequest(Request.Method.POST, VIEW_CATEGORY, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-
+                   progressDialog.dismiss();
                 try {
                     JSONObject jsonObject=new JSONObject(response);
                     JSONArray jsonArray=jsonObject.getJSONArray("category_product");
@@ -203,6 +204,7 @@ public class Admin_Home_category_Fragment extends Fragment {
                         categoryModal.setCatename(name);
                         categoryModal.setCateimage(image);
                         product.add(categoryModal);
+                        tvoffer.setText("Check offer click here");
 
                         Admin_CategoryAdapter adapter1=new Admin_CategoryAdapter(getContext(),product);
                         recyclerView.setAdapter(adapter1);
@@ -217,6 +219,7 @@ public class Admin_Home_category_Fragment extends Fragment {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
+                progressDialog.dismiss();
 
             }
         });

@@ -1,20 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="navin.laundry.myproject.Add_to_cart_Activity">
-
-<ScrollView
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:orientation="vertical"
-        android:layout_height="match_parent">
+        android:layout_height="@dimen/_512sdp">
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_512sdp">
+
         <RelativeLayout
+            android:layout_marginRight="@dimen/_10sdp"
+            android:layout_marginLeft="@dimen/_10sdp"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_512sdp">
     <ImageView
@@ -23,18 +25,23 @@
         android:layout_marginLeft="@dimen/_12sdp"
         android:layout_marginRight="@dimen/_12sdp"
         android:layout_height="@dimen/_300sdp"/>
-
+<RelativeLayout
+    android:id="@+id/Layout_price"
+    android:layout_below="@+id/Image_detail"
+    android:background="@drawable/addprice"
+android:gravity="center"
+    android:layout_width="@dimen/_55sdp"
+    android:layout_marginTop="-10dp"
+    android:layout_height="@dimen/_55sdp">
     <TextView
         android:id="@+id/tvShow_price"
-        android:layout_below="@+id/Image_detail"
-        android:layout_width="@dimen/_55sdp"
-        android:text="100"
-        android:textColor="@color/white"
-        android:layout_marginTop="-15dp"
-        android:layout_marginLeft="@dimen/_8sdp"
+        android:layout_width="wrap_content"
+        android:text="1004445"
         android:gravity="center"
-        android:background="@drawable/addprice"
-        android:layout_height="@dimen/_55sdp"/>
+        android:textColor="@color/white"
+        android:layout_height="wrap_content"/>
+</RelativeLayout>
+
 
     <TextView
         android:id="@+id/Add_numb_item"
@@ -43,7 +50,7 @@
         android:text="0"
         android:visibility="invisible"
         android:gravity="center"
-        android:layout_marginTop="-20dp"
+        android:layout_marginTop="-10dp"
         android:textColor="@color/white"
         android:background="@drawable/addquntity"
         android:layout_marginLeft="@dimen/_40sdp"
@@ -65,25 +72,25 @@
         android:layout_below="@+id/Image_detail"
         android:layout_width="@dimen/_100sdp"
         android:layout_marginTop="@dimen/_10sdp"
-        android:layout_marginLeft="@dimen/_97sdp"
+        android:layout_marginLeft="@dimen/_95sdp"
         android:visibility="invisible"
         android:textColor="@color/blue"
         android:background="@color/white"
         android:text="Remove"
         android:layout_height="wrap_content"/>
     <TextView
-        android:layout_below="@+id/tvShow_price"
+        android:layout_below="@+id/Layout_price"
         android:layout_width="wrap_content"
         android:layout_marginTop="-41dp"
-        android:gravity="center"
-        android:layout_marginLeft="@dimen/_23sdp"
+        android:layout_marginLeft="@dimen/_18sdp"
         android:text="₹"
+        android:visibility="gone"
         android:textColor="@color/white"
         android:layout_height="wrap_content"/>
 
     <TextView
         android:id="@+id/tvDproduct_name"
-        android:layout_below="@+id/tvShow_price"
+        android:layout_below="@+id/Layout_price"
         android:layout_width="wrap_content"
         android:text="product name"
         android:paddingTop="@dimen/_10sdp"
@@ -107,11 +114,15 @@
         android:text="add to cart"
         android:textColor="@color/white"
         android:background="@color/blue"
-        android:layout_marginLeft="@dimen/_120sdp"
+        android:layout_marginLeft="@dimen/_100sdp"
         android:visibility="invisible"
         android:layout_width="@dimen/_100sdp"
         android:layout_height="wrap_content"/>
 
+
+        </RelativeLayout>
+</ScrollView>
+    </RelativeLayout>
     <Button
         android:id="@+id/Btnplace_order_id"
         android:text="place order"
@@ -120,7 +131,4 @@
         android:layout_alignParentBottom="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
-        </RelativeLayout>
-    </LinearLayout>
-</ScrollView>
-</LinearLayout>
+</RelativeLayout>

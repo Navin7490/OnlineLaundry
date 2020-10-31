@@ -140,11 +140,12 @@ public class Place_order_Activity extends AppCompatActivity {
                     User_Order_Modal order = new User_Order_Modal(Place_order_Activity.this);
                     order.setOrderdate(String.valueOf(timenow));
                     order.setUsername(username);
-                    order.setMobile(mobile);
+                    order.setMobile(mobile1);
+                    order.setMobileoptional(mobile);
                     order.setAddress(address);
                     order.setPickupdate(date);
                     order.setPickuptime(time);
-                    Intent paymentgo = new Intent(getApplicationContext(), Select_Payment_Method_Activity.class);
+                    Intent paymentgo = new Intent(getApplicationContext(), Purchases_Activity.class);
                     startActivity(paymentgo);
                 }
             }

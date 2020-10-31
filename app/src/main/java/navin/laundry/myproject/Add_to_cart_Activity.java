@@ -65,6 +65,7 @@ public class Add_to_cart_Activity extends AppCompatActivity {
     ArrayList<Mycard_modal> prodct;
     String items,itemqty,itemprice,sum,status;
     JSONArray jsonArray;
+    String rupi="₹";
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -93,7 +94,7 @@ public class Add_to_cart_Activity extends AppCompatActivity {
         d=intent.getStringExtra("description");
         tvpdetail.setText(d);
         p= intent.getStringExtra("price");
-        tvpric.setText(p);
+        tvpric.setText(rupi.concat(p));
 
         Glide.with(this).load( intent.getStringExtra("image")).into(image);
 

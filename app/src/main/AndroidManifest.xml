@@ -2,11 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="navin.laundry.myproject">
+
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
     <application
         android:allowBackup="true"
@@ -14,56 +15,57 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:usesCleartextTraffic="true"
-        android:theme="@style/AppTheme">
-        <activity android:name="navin.laundry.myproject.Admin_ViewOrder_Activity"></activity>
-        <activity android:name="navin.laundry.myproject.Admin_ViewProduct_Activity" />
-        <activity android:name="navin.laundry.myproject.Admin_Home_Activity" />
-        <activity android:name="navin.laundry.myproject.Admin_Login_Activity" />
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".Purchases_Activity"></activity>
+        <activity android:name=".Admin_ViewOrder_Activity" />
+        <activity android:name=".Admin_ViewProduct_Activity" />
+        <activity android:name=".Admin_Home_Activity" />
+        <activity android:name=".Admin_Login_Activity" />
         <activity
-            android:name="navin.laundry.myproject.Select_Payment_Method_Activity"
+            android:name=".Select_Payment_Method_Activity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="navin.laundry.myproject.MyOrder_Activity"
+            android:name=".MyOrder_Activity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="navin.laundry.myproject.View_cloth_Activity"
+            android:name=".View_cloth_Activity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="navin.laundry.myproject.Forgot_password_Activity"
+            android:name=".Forgot_password_Activity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="navin.laundry.myproject.Place_order_Activity"
+            android:name=".Place_order_Activity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="navin.laundry.myproject.Offer_Activity"
+            android:name=".Offer_Activity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="navin.laundry.myproject.Feedback_Activity"
+            android:name=".Feedback_Activity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="navin.laundry.myproject.About_Activity"
+            android:name=".About_Activity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="navin.laundry.myproject.Terms_and_condition_Activity"
+            android:name=".Terms_and_condition_Activity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="navin.laundry.myproject.My_cart_Activity"
+            android:name=".My_cart_Activity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="navin.laundry.myproject.Add_to_cart_Activity"
+            android:name=".Add_to_cart_Activity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="navin.laundry.myproject.Navigation_Activity"
+            android:name=".Navigation_Activity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="navin.laundry.myproject.Signup_Activity"
+            android:name=".Signup_Activity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="navin.laundry.myproject.Login_Activity"
+            android:name=".Login_Activity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="navin.laundry.myproject.MainActivity"
+            android:name=".MainActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -8,11 +8,15 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -21,12 +25,15 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.denzcoskun.imageslider.ImageSlider;
+import com.denzcoskun.imageslider.models.SlideModel;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -44,11 +51,15 @@ public class User_Category_Fragment extends Fragment {
     private String mParam1;
     private String mParam2;
     String CATEGORY_URL = "https://navindeveloperinfo.000webhostapp.com/laundry_service/api/category.php";
-
+    String MARQUETEXT_URL = "https://navindeveloperinfo.000webhostapp.com/laundry_service/api/marque_title.php";
+    String VIEWPAGER_URL = "https://navindeveloperinfo.000webhostapp.com/laundry_service/api/viewpager.php";
     ArrayList<Category_modal> product;
     RecyclerView recyclerView;
     View v;
     Toast toast;
+    ImageSlider imageSlider;
+    TextView tvmqree;
+    Animation aniblanki;
     public User_Category_Fragment() {
         // Required empty public constructor
     }
@@ -85,9 +96,19 @@ public class User_Category_Fragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         v =inflater.inflate(R.layout.fragment_user__category_, container, false);
+        imageSlider = v.findViewById(R.id.imageSlider);
+
+        tvmqree =v. findViewById(R.id.Tvmaruee);
+        tvmqree.setEllipsize(TextUtils.TruncateAt.MARQUEE);
+        tvmqree.setSelected(true);
+        aniblanki = AnimationUtils.loadAnimation(getActivity(), R.anim.anim);
+        tvmqree.setVisibility(View.VISIBLE);
+
+        tvmqree.startAnimation(aniblanki);
         recyclerView=v.findViewById(R.id.Rv_UsrCate);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new GridLayoutManager(getActivity(),2));
+
         product=new ArrayList<>();
         final ProgressDialog progressDialog = new ProgressDialog(getActivity());
         progressDialog.show();
@@ -95,6 +116,81 @@ public class User_Category_Fragment extends Fragment {
         progressDialog.setContentView(R.layout.progrees_dialog);
         progressDialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
         recyclerView.setVisibility(View.VISIBLE);
+
+
+
+        StringRequest stringpager = new StringRequest(Request.Method.GET, VIEWPAGER_URL, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                progressDialog.dismiss();
+                try {
+                    JSONObject jsonObject = new JSONObject(response);
+                    JSONArray jsonArray = jsonObject.getJSONArray("view_pager");
+                    List<SlideModel> slideModels = new ArrayList<>();
+
+                    for (int i = 0; i < jsonArray.length(); i++) {
+
+                        JSONObject category = jsonArray.getJSONObject(i);
+
+
+                        String image = category.getString("v_image");
+                        String name = category.getString("v_title");
+                        slideModels.add(new SlideModel(image, name));
+                        imageSlider.setImageList(slideModels, true);
+
+                    }
+                } catch (JSONException ex) {
+                    ex.printStackTrace();
+                }
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                progressDialog.dismiss();
+
+            }
+        });
+        RequestQueue viewpare = Volley.newRequestQueue(getActivity());
+        viewpare.add(stringpager);
+
+        // offer start//
+
+
+        StringRequest stringmarque = new StringRequest(Request.Method.GET, MARQUETEXT_URL, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                progressDialog.dismiss();
+                try {
+                    JSONObject jsonObject = new JSONObject(response);
+                    JSONArray jsonArray = jsonObject.getJSONArray("category_product");
+                    for (int i = 0; i < jsonArray.length(); i++) {
+
+                        JSONObject category = jsonArray.getJSONObject(i);
+
+                        String name = category.getString("m_text");
+                        tvmqree.setText(name);
+
+
+                    }
+                } catch (JSONException ex) {
+                    ex.printStackTrace();
+                }
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                progressDialog.dismiss();
+
+            }
+        });
+        RequestQueue mrequset = Volley.newRequestQueue(getActivity());
+        mrequset.add(stringmarque);
+        //offer end //
+
+
+        // category start  //
         StringRequest stringRequest = new StringRequest(Request.Method.GET, CATEGORY_URL, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {

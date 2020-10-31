@@ -59,6 +59,7 @@ public class Select_Payment_Method_Activity extends AppCompatActivity {
     String name = "Navin";
     String note = "Paying for Laundry service";
     String staus;
+    String amoutpayble="Amount Payable ₹:";
     // end google pay//
     public static final String PHONE_PAY_PACKAGE_NAME="com.phonepe.app";
 
@@ -82,7 +83,7 @@ public class Select_Payment_Method_Activity extends AppCompatActivity {
         tvnext.setVisibility(View.GONE);
         User_Order_Modal order=new User_Order_Modal(Select_Payment_Method_Activity.this);
         Amountpay=  order.shareprefmyorder.getString("total_price",null);
-        tvamount.setText(Amountpay);
+        tvamount.setText(amoutpayble.concat(Amountpay));
         User_login_modal login_modal=new User_login_modal(Select_Payment_Method_Activity.this);
         email= login_modal.sharedPreferencesLogin.getString("LEmail",null);
         oredrdate=order.shareprefmyorder.getString("order_date",null);
@@ -226,7 +227,7 @@ public class Select_Payment_Method_Activity extends AppCompatActivity {
         }
     }
 
-
+//you've exceeded the maximum transaction  amount set by your bank
     public static boolean isAnstalledPayPal(Context context, String PackegeName) {
         try {
             context.getPackageManager().getApplicationInfo(PackegeName, 0);

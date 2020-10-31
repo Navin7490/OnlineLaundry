@@ -60,34 +60,16 @@ import java.util.List;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class Navigation_Activity extends AppCompatActivity {
-    SwipeRefreshLayout swipeRefreshLayout;
-    Animation aniblanki;
-    RecyclerView recyclerView;
-    ImageSlider imageSlider;
+
     TextView navname, navemail;
     CircleImageView navimage;
     DrawerLayout drawerLayout;
     NavigationView navigationView;
     ActionBarDrawerToggle abdt;
-
-    ArrayList<Category_modal> product;
-    RecyclerView.LayoutManager layoutManager;
-    TextView tvmqree;
     Toast toast;
-    Bitmap bitmap;
-    TextView textView;
     View header;
     Menu myorder, mycard, logout, share, terms, about, feedback;
     FrameLayout frameLayout;
-
-    String MARQUETEXT_URL = "https://navindeveloperinfo.000webhostapp.com/laundry_service/api/marque_title.php";
-    String CATEGORY_URL = "https://navindeveloperinfo.000webhostapp.com/laundry_service/api/category.php";
-    String VIEWPAGER_URL = "https://navindeveloperinfo.000webhostapp.com/laundry_service/api/viewpager.php";
-
-    //    String MARQUETEXT_URL="http://192.168.43.65/laundry_service/api/marque_title.php";
-//    String CATEGORY_URL="http://192.168.43.65/laundry_service/api/category.php";
-//    String VIEWPAGER_URL="http://192.168.43.65/laundry_service/api/viewpager.php";
-    String category;
     Myreciver myreciver;
 
     @Override
@@ -95,14 +77,9 @@ public class Navigation_Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_navigation_);
-        product = new ArrayList<>();
         //swipeRefreshLayout=findViewById(R.id.refreshlayout);
 
-        imageSlider = findViewById(R.id.imageSlider);
 
-        tvmqree = findViewById(R.id.Tvmaruee);
-        tvmqree.setEllipsize(TextUtils.TruncateAt.MARQUEE);
-        tvmqree.setSelected(true);
 
         myorder = findViewById(R.id.item_1);
         mycard = findViewById(R.id.item_2);
@@ -122,9 +99,7 @@ public class Navigation_Activity extends AppCompatActivity {
         navimage = header.findViewById(R.id.ImLProfile);
         navname = header.findViewById(R.id.nav_name);
         navemail = header.findViewById(R.id.nav_email);
-        aniblanki = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.anim);
-        tvmqree.setVisibility(View.VISIBLE);
-        tvmqree.startAnimation(aniblanki);
+
         // tvmqree.setTextColor(R.color.red);
 
 
@@ -315,79 +290,6 @@ public class Navigation_Activity extends AppCompatActivity {
 
 
                 } else {
-
-                    final ProgressDialog progressDialog = new ProgressDialog(Navigation_Activity.this);
-                    progressDialog.show();
-                    progressDialog.setCanceledOnTouchOutside(false);
-                    progressDialog.setContentView(R.layout.progrees_dialog);
-                    progressDialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
-
-                    StringRequest stringpager = new StringRequest(Request.Method.GET, VIEWPAGER_URL, new Response.Listener<String>() {
-                        @Override
-                        public void onResponse(String response) {
-                            progressDialog.dismiss();
-                            try {
-                                JSONObject jsonObject = new JSONObject(response);
-                                JSONArray jsonArray = jsonObject.getJSONArray("view_pager");
-                                List<SlideModel> slideModels = new ArrayList<>();
-
-                                for (int i = 0; i < jsonArray.length(); i++) {
-
-                                    JSONObject category = jsonArray.getJSONObject(i);
-
-
-                                    String image = category.getString("v_image");
-                                    String name = category.getString("v_title");
-                                    slideModels.add(new SlideModel(image, name));
-                                    imageSlider.setImageList(slideModels, true);
-
-                                }
-                            } catch (JSONException ex) {
-                                ex.printStackTrace();
-                            }
-
-                        }
-                    }, new Response.ErrorListener() {
-                        @Override
-                        public void onErrorResponse(VolleyError error) {
-                            progressDialog.dismiss();
-
-                        }
-                    });
-                    RequestQueue viewpare = Volley.newRequestQueue(Navigation_Activity.this);
-                    viewpare.add(stringpager);
-
-
-                    StringRequest stringmarque = new StringRequest(Request.Method.GET, MARQUETEXT_URL, new Response.Listener<String>() {
-                        @Override
-                        public void onResponse(String response) {
-                            progressDialog.dismiss();
-                            try {
-                                JSONObject jsonObject = new JSONObject(response);
-                                JSONArray jsonArray = jsonObject.getJSONArray("category_product");
-                                for (int i = 0; i < jsonArray.length(); i++) {
-
-                                    JSONObject category = jsonArray.getJSONObject(i);
-
-                                    String name = category.getString("m_text");
-                                    tvmqree.setText(name);
-
-
-                                }
-                            } catch (JSONException ex) {
-                                ex.printStackTrace();
-                            }
-
-                        }
-                    }, new Response.ErrorListener() {
-                        @Override
-                        public void onErrorResponse(VolleyError error) {
-                            progressDialog.dismiss();
-
-                        }
-                    });
-                    RequestQueue mrequset = Volley.newRequestQueue(Navigation_Activity.this);
-                    mrequset.add(stringmarque);
 //
                     User_Category_Fragment fragment=new User_Category_Fragment();
                     FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();

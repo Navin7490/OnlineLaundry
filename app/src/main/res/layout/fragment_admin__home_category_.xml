@@ -23,21 +23,33 @@
         android:id="@+id/imageSlider"
         android:layout_height="@dimen/_200sdp"
         tools:ignore="MissingClass" />
-    <androidx.recyclerview.widget.RecyclerView
+    <TextView
+        android:id="@+id/Tv_A_maruee"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_7sdp"
+        android:scrollHorizontally="true"
+        android:singleLine="true"
+        android:gravity="center"
         android:layout_below="@+id/imageSlider"
+        android:textColor="@color/blue"
+        android:textSize="@dimen/_20sdp"
+        android:textStyle="italic" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_below="@+id/Tv_A_maruee"
         android:id="@+id/Rv_Category"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="@dimen/_220sdp"/>
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/Floati_Home_catego"
         android:layout_width="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="@dimen/_70sdp"
         android:layout_marginEnd="40dp"
         android:src="@drawable/icaadd"
-        app:backgroundTint="#26D4EA"
+        app:backgroundTint="#DFDFD7"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
-        android:layout_marginRight="20dp" />
+        android:layout_marginRight="@dimen/_10sdp" />
 </RelativeLayout>

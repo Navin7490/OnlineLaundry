@@ -1,12 +1,17 @@
 apply plugin: 'com.android.application'
-
+repositories {
+    mavenCentral()
+    flatDir{
+        dirs 'libs'
+    }
+}
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.3"
 
     defaultConfig {
         applicationId "navin.laundry.myproject"
-        minSdkVersion 14
+        minSdkVersion 26
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
@@ -46,5 +51,8 @@ dependencies {
     implementation 'com.github.ybq:Android-SpinKit:1.4.0'
 
     implementation 'com.google.android.gms:play-services-wallet:18.0.0'
+
+    //razorpay
+    implementation 'com.razorpay:checkout:1.5.16'
 
 }

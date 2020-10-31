@@ -145,4 +145,17 @@ public class User_Order_Modal {
     String username;
     String email;
     String mobile;
+
+    public String getMobileoptional() {
+        return mobileoptional;
+    }
+
+    public void setMobileoptional(String mobileoptional) {
+        this.mobileoptional = mobileoptional;
+        shareprefmyorder.edit().putString("mobile2",mobileoptional).commit();
+
+    }
+
+    String mobileoptional;
+
 }

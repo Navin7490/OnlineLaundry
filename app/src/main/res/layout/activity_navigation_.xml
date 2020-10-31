@@ -14,28 +14,11 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:orientation="vertical"
         android:layout_height="match_parent">
 
-    <com.denzcoskun.imageslider.ImageSlider
-        android:layout_width="match_parent"
-        app:auto_cycle="true"
-        app:period="2000"
-        android:id="@+id/imageSlider"
-        android:layout_height="@dimen/_200sdp"/>
-    <TextView
-        android:id="@+id/Tvmaruee"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="@dimen/_7sdp"
-        android:scrollHorizontally="true"
-        android:singleLine="true"
-        android:gravity="center"
-        android:textColor="@color/blue"
-        android:textSize="@dimen/_20sdp"
-        android:textStyle="italic" />
     <FrameLayout
         android:id="@+id/Fram_cate"
         android:layout_width="match_parent"
@@ -44,7 +27,7 @@
     </FrameLayout>
 
 
-    </LinearLayout>
+    </RelativeLayout>
 
 
     </ScrollView>

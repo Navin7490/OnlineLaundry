@@ -1,27 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
     tools:context="navin.laundry.myproject.My_cart_Activity">
+    <RelativeLayout
 
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_450sdp">
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <LinearLayout
+        android:layout_height="@dimen/_450sdp">
+        <RelativeLayout
             android:layout_width="match_parent"
             android:orientation="vertical"
-            android:layout_height="wrap_content">
+            android:layout_height="@dimen/_450sdp">
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/Rvcart"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_480sdp"/>
-        </LinearLayout>
+        android:layout_height="wrap_content"/>
+        </RelativeLayout>
     </ScrollView>
-   <RelativeLayout
-    android:layout_width="match_parent"
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_alignParentBottom="true"
+       android:layout_width="match_parent"
     android:layout_height="wrap_content">
     <TextView
         android:id="@+id/Tv_totalpricetitle"
@@ -32,7 +39,6 @@
         android:paddingBottom="@dimen/_7sdp"
         android:textSize="@dimen/_14sdp"
         android:background="@color/white"
-        android:layout_alignParentBottom="true"
         android:textColor="@color/blue"
         android:textStyle="bold"
         android:layout_height="wrap_content"/>
@@ -46,7 +52,6 @@
            android:paddingBottom="@dimen/_7sdp"
            android:textSize="@dimen/_14sdp"
            android:background="@color/white"
-           android:layout_alignParentBottom="true"
            android:textColor="@color/blue"
            android:textStyle="bold"
            android:layout_height="wrap_content"/>
@@ -62,10 +67,9 @@
            android:background="@color/blue"
            android:gravity="center"
            android:textStyle="normal"
-           android:layout_alignParentBottom="true"
            android:textColor="@color/white"
            android:layout_height="wrap_content"/>
 
 </RelativeLayout>
 
-</LinearLayout>
+</RelativeLayout>
