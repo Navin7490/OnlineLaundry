@@ -1,5 +1,6 @@
 package navin.laundry.myproject;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
@@ -8,6 +9,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -37,20 +39,21 @@ public class Purchases_Activity extends AppCompatActivity implements PaymentResu
     ProgressDialog progressDialog;
     Toast toast;
     String Amountpay;
-    String oredrdate, username, email, mobile,mobile2, address, items, itemqty, itemprice, pickupdate, pickuptime, status;
+    String oredrdate, username, email, mobile, mobile2, address, items, itemqty, itemprice, pickupdate, pickuptime, status;
     String amoutpayble = "Amount Payable ₹:";
-  String totalprice;
-    int totalamount;
-    int t;
+    String totalprice;
+    String totalamount;
+    double total;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_purchases_);
         btnpay = findViewById(R.id.BtnPurchaese);
-        tvamount=findViewById(R.id.Tv_amoutapayable);
+        tvamount = findViewById(R.id.Tv_amoutapayable);
 
-
-
+       getSupportActionBar().setTitle("Payment");
+       getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         User_Order_Modal order = new User_Order_Modal(Purchases_Activity.this);
         Amountpay = order.shareprefmyorder.getString("total_price", null);
         tvamount.setText(amoutpayble.concat(Amountpay));
@@ -67,8 +70,7 @@ public class Purchases_Activity extends AppCompatActivity implements PaymentResu
         totalprice = order.shareprefmyorder.getString("total_price", null);
         pickupdate = order.shareprefmyorder.getString("pickup_date", null);
         pickuptime = order.shareprefmyorder.getString("pickup_time", null);
-
-        t= Integer.parseInt(totalprice);
+        total = Double.parseDouble(totalprice);
         btnpay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -81,7 +83,7 @@ public class Purchases_Activity extends AppCompatActivity implements PaymentResu
         Checkout checkout = new Checkout();
         checkout.setKeyID("rzp_live_v1lezGFouPayNY");
         Checkout.preload(getApplicationContext());
-         totalamount = 5* 100;
+        totalamount = String.valueOf(total * 100);
         final Activity activity = this;
 
         /**
@@ -96,7 +98,7 @@ public class Purchases_Activity extends AppCompatActivity implements PaymentResu
             //  options.put("order_id", "order_DBJOWzybf0sJbb");//from response of step 3.
             options.put("theme.color", "#2196f3");
             options.put("currency", "INR");
-            options.put("amount",totalamount );//pass amount in currency subunits
+            options.put("amount", totalamount);//pass amount in currency subunits
             options.put("prefill.email", email);
             options.put("prefill.contact", mobile);
             checkout.open(activity, options);
@@ -107,13 +109,17 @@ public class Purchases_Activity extends AppCompatActivity implements PaymentResu
 
     @Override
     public void onPaymentSuccess(String s) {
-        Toast.makeText(this, "Payment SuccessFull" , Toast.LENGTH_SHORT).show();
+        toast = Toast.makeText(this, "Payment SuccessFull", Toast.LENGTH_LONG);
+        toast.show();
+        toast.setGravity(Gravity.CENTER, 0, 0);
         PayOrder();
     }
 
     @Override
     public void onPaymentError(int i, String s) {
-        Toast.makeText(this, "Payment Failed" , Toast.LENGTH_SHORT).show();
+        toast = Toast.makeText(this, "Payment Failed", Toast.LENGTH_LONG);
+        toast.show();
+        toast.setGravity(Gravity.CENTER, 0, 0);
 
     }
 
@@ -130,7 +136,7 @@ public class Purchases_Activity extends AppCompatActivity implements PaymentResu
                     JSONObject jsonObject = new JSONObject(response);
                     String status = jsonObject.getString("status");
                     if (status.equals("sucess")) {
-                        toast = Toast.makeText(Purchases_Activity.this, "Order Confirm", Toast.LENGTH_SHORT);
+                        toast = Toast.makeText(Purchases_Activity.this, "Your Order Confirm", Toast.LENGTH_LONG);
                         toast.show();
                         toast.setGravity(Gravity.CENTER, 0, 0);
                         Intent intent = new Intent(getApplicationContext(), Navigation_Activity.class);
@@ -139,7 +145,7 @@ public class Purchases_Activity extends AppCompatActivity implements PaymentResu
                         startActivity(intent);
 
                     } else {
-                        Toast.makeText(Purchases_Activity.this, "fail", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Purchases_Activity.this, "fail", Toast.LENGTH_LONG).show();
 
                     }
 
@@ -152,7 +158,9 @@ public class Purchases_Activity extends AppCompatActivity implements PaymentResu
             @Override
             public void onErrorResponse(VolleyError error) {
                 // progressDialog.dismiss();
-                Toast.makeText(Purchases_Activity.this, "try again" + error.getMessage(), Toast.LENGTH_SHORT).show();
+                toast = Toast.makeText(Purchases_Activity.this, "try again", Toast.LENGTH_LONG);
+                toast.show();
+                toast.setGravity(Gravity.CENTER, 0, 0);
 
             }
         }) {
@@ -168,7 +176,7 @@ public class Purchases_Activity extends AppCompatActivity implements PaymentResu
                 parms.put("items", items);
                 parms.put("itemqty", itemqty);
                 parms.put("itemprice", itemprice);
-                parms.put("totalprice", "5");
+                parms.put("totalprice", totalprice);
                 parms.put("pickupdate", pickupdate);
                 parms.put("pickuptime", pickuptime);
 
@@ -180,4 +188,11 @@ public class Purchases_Activity extends AppCompatActivity implements PaymentResu
         requestQueue.add(stringRequest);
     }
 
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId()==android.R.id.home){
+            finish();
+        }
+        return super.onOptionsItemSelected(item);
+    }
 }

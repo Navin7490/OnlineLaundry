@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -21,6 +21,10 @@
             android:layout_margin="@dimen/_10sdp"
             android:layout_marginTop="@dimen/_20sdp"
             android:gravity="center">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
 
 
             <EditText
@@ -38,6 +42,7 @@
 
             <EditText
                 android:id="@+id/EtMobileNumber"
+                android:layout_below="@+id/EtName"
                 android:drawablePadding="@dimen/_10sdp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -49,6 +54,7 @@
                 android:layout_marginTop="@dimen/_5sdp"/>
             <EditText
                 android:id="@+id/EtMobileNumberAlternativ"
+                android:layout_below="@+id/EtMobileNumber"
                 android:drawablePadding="@dimen/_10sdp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -58,19 +64,34 @@
                 android:inputType="number"
                 android:padding="@dimen/_10sdp"
                 android:layout_marginTop="@dimen/_5sdp"/>
+            <Button
+                android:id="@+id/Btn_PCurrentLocation"
+                android:text="use current location"
+                android:layout_below="@+id/EtMobileNumberAlternativ"
+                android:gravity="center"
+                android:paddingLeft="@dimen/_5sdp"
+                android:drawablePadding="@dimen/_5sdp"
+                android:textColor="@color/white"
+                android:drawableTint="@color/white"
+                android:drawableRight="@drawable/ic_current_location"
+                android:background="@color/darkblue"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_20sdp"/>
             <EditText
                 android:drawablePadding="@dimen/_10sdp"
                 android:id="@+id/EtAddress"
+                android:layout_below="@+id/Btn_PCurrentLocation"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Building/Society/Street,Landmark,etc"
-                android:inputType="textPersonName"
+                android:inputType="textMultiLine"
                 android:background="@drawable/rvitem"
                 android:padding="@dimen/_10sdp"
                 android:layout_marginTop="@dimen/_5sdp"/>
             <EditText
                 android:drawablePadding="@dimen/_10sdp"
                 android:id="@+id/EtDate"
+                android:layout_below="@+id/EtAddress"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Choose Pickup Date"
@@ -83,6 +104,7 @@
             <EditText
                 android:drawablePadding="@dimen/_10sdp"
                 android:id="@+id/Ettime"
+                android:layout_below="@+id/EtDate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Choose Pickup Time"
@@ -95,14 +117,17 @@
 
             <Button
                 android:id="@+id/BTNOrder"
-                android:layout_width="@dimen/_180sdp"
+                android:layout_below="@+id/Ettime"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="order"
+                android:layout_marginTop="@dimen/_20sdp"
                 android:padding="@dimen/_10sdp"
                 android:textColor="@color/blue"
                 android:background="@drawable/edit"
-                android:layout_gravity="center"
-                android:layout_marginTop="@dimen/_20sdp"/>
+                android:layout_gravity="center" />
+            </RelativeLayout>
+
         </LinearLayout>
     </ScrollView>
-</LinearLayout>
+</RelativeLayout>
