@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_margin="@dimen/_5sdp"
+        android:padding="@dimen/_5sdp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/Improduct"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:background="#E6E4E4"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_190sdp"/>
+
+        <TextView
+            android:layout_marginTop="@dimen/_10sdp"
+            android:id="@+id/TvproductName"
+            android:layout_below="@+id/Improduct"
+            android:layout_width="match_parent"
+            android:paddingLeft="@dimen/_10sdp"
+            android:layout_height="wrap_content"
+            android:background="#E6E4E4"
+            android:padding="@dimen/_5sdp" />
+
+        <TextView
+            android:id="@+id/TvproDescrip"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_width="match_parent"
+            android:layout_below="@+id/TvproductName"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_15sdp"
+            android:padding="@dimen/_5sdp"
+            android:paddingLeft="@dimen/_10sdp"
+            android:background="#E6E4E4"
+            android:layout_height="wrap_content"/>
+        <TableLayout
+            android:id="@+id/Tablelayout"
+            android:layout_width="@dimen/_55sdp"
+            android:background="@drawable/addpriceshimmer"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_below="@+id/Improduct"
+            android:layout_marginRight="@dimen/_30sdp"
+            android:layout_alignParentRight="true"
+            android:layout_height="@dimen/_55sdp">
+            <TableRow>
+
+
+
+
+                <TextView
+                    android:id="@+id/Tvrupi"
+                    android:layout_width="match_parent"
+                    android:textSize="@dimen/_12sdp"
+                    android:layout_column="1"
+                    android:paddingLeft="@dimen/_14sdp"
+                    android:gravity="center"
+                    android:textColor="#E6E4E4"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:id="@+id/TvPrice"
+                    android:layout_column="2"
+                    android:padding="@dimen/_10sdp"
+                    android:gravity="center"
+                    android:layout_marginTop="-1dp"
+                    android:textSize="@dimen/_12sdp"
+                    android:textColor="#E6E4E4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_60sdp"/>
+            </TableRow>
+        </TableLayout>
+
+
+    </RelativeLayout>
+
+
+</LinearLayout>

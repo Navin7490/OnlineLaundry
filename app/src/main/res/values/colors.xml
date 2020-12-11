@@ -11,5 +11,6 @@
     <color name="green">#57EC26</color>
     <color name="yellow">#FFC107</color>
     <color name="darkblue">#0D47DA</color>
+    <color name="shimmer">#A6A7A8</color>
 
 </resources>

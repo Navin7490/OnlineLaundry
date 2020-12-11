@@ -260,11 +260,19 @@ public class Navigation_Activity extends AppCompatActivity {
 
     }
 
+//    @Override
+//    protected void onStart() {
+//        super.onStart();
+//        IntentFilter filter=new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION);
+//        registerReceiver(myreciver,filter);
+//    }
+
+
     @Override
-    protected void onStart() {
-        super.onStart();
-        IntentFilter filter=new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION);
-        registerReceiver(myreciver,filter);
+    protected void onResume() {
+        super.onResume();
+                IntentFilter filter=new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION);
+               registerReceiver(myreciver,filter);
     }
 
     @Override
@@ -272,6 +280,8 @@ public class Navigation_Activity extends AppCompatActivity {
         super.onStop();
         unregisterReceiver(myreciver);
     }
+
+
 
     public class Myreciver extends BroadcastReceiver {
         public boolean noconnectivity;

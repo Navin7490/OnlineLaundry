@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.net.Uri;
 import android.util.Base64;
 import android.view.LayoutInflater;
@@ -17,6 +18,9 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.facebook.shimmer.Shimmer;
+import com.facebook.shimmer.ShimmerDrawable;
+
 import navin.laundry.myproject.R;
 
 
@@ -53,7 +57,21 @@ public class ProdctView_Adapter extends RecyclerView.Adapter<ProdctView_Adapter.
         holder.name.setText( product.get(position).getName());
         holder.description.setText( product.get(position).getDescription());
         holder.price.setText( product.get(position).getPrice());
-        Glide.with(context).load(product.get(position).getImage()).into(holder.image);
+
+        Shimmer shimmer= new Shimmer.ColorHighlightBuilder()
+                .setBaseColor(Color.parseColor("#E3E3E3"))
+                .setHighlightColor(Color.parseColor("#F7F7F7"))
+                .setDropoff(50)
+                .setHighlightAlpha(1)
+                .build();
+
+        ShimmerDrawable shimmerDrawable=new ShimmerDrawable();
+        shimmerDrawable.setShimmer(shimmer);
+
+        Glide.with(context)
+                .load(product.get(position).getImage())
+                .placeholder(shimmerDrawable)
+                .into(holder.image);
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @SuppressLint("CheckResult")

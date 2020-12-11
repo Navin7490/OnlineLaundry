@@ -9,6 +9,7 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -18,6 +19,8 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.facebook.shimmer.ShimmerFrameLayout;
+
 import navin.laundry.myproject.R;
 
 
@@ -38,6 +41,8 @@ public class View_cloth_Activity extends AppCompatActivity {
 //    String PRODUCT_URL="http://192.168.43.65/laundry_service/api/myproduct.php?";
 
     String category;
+
+    ShimmerFrameLayout shimmerFrameLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,13 +53,17 @@ public class View_cloth_Activity extends AppCompatActivity {
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setHasFixedSize(true);
 
+        // Assign shimmer
+        shimmerFrameLayout=findViewById(R.id.shimmer_Layoutproduct);
+        shimmerFrameLayout.startShimmer();
+
         Intent catintent=getIntent();
         category=catintent.getStringExtra("category");
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle(category+" product");
         final ProgressDialog progressDialog = new ProgressDialog(View_cloth_Activity.this);
-        progressDialog.show();
+       // progressDialog.show();
         progressDialog.setCanceledOnTouchOutside(false);
         progressDialog.setContentView(R.layout.progrees_dialog);
         progressDialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
@@ -80,6 +89,9 @@ public class View_cloth_Activity extends AppCompatActivity {
                         product.add(modal);
                         ProdctView_Adapter adapter=new ProdctView_Adapter(getApplicationContext(),product);
                         recyclerView.setAdapter(adapter);
+                        recyclerView.setVisibility(View.VISIBLE);
+                        shimmerFrameLayout.stopShimmer();
+                        shimmerFrameLayout.setVisibility(View.GONE);
 
                     }
                 } catch (JSONException e) {

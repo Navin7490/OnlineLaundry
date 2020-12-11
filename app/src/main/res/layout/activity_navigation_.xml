@@ -6,10 +6,7 @@
     android:id="@+id/drawer"
     android:layout_height="match_parent"
     tools:context="navin.laundry.myproject.Navigation_Activity">
-<!--<androidx.swiperefreshlayout.widget.SwipeRefreshLayout-->
-<!--    android:layout_width="match_parent"-->
-<!--    android:id="@+id/refreshlayout"-->
-<!--    android:layout_height="wrap_content">-->
+
 
     <ScrollView
         android:layout_width="match_parent"

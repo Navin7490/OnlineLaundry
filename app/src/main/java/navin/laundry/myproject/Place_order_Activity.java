@@ -26,6 +26,7 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import navin.laundry.myproject.R;
 
@@ -262,9 +263,11 @@ public class Place_order_Activity extends AppCompatActivity implements LocationL
         try {
             Geocoder geocoder=new Geocoder(Place_order_Activity.this, Locale.getDefault());
 
+           // List<Address> addresses=geocoder.getFromLocation(location.getLatitude(),location.getLongitude(),1);
             List<Address> addresses=geocoder.getFromLocation(location.getLatitude(),location.getLongitude(),1);
 
-           // etcountry.setText(addresses.get(0).getCountryName());
+
+            // etcountry.setText(addresses.get(0).getCountryName());
            // etstate.setText(addresses.get(0).getAdminArea());
            // etdistric.setText(addresses.get(0).getSubAdminArea());
             //etcity.setText(addresses.get(0).getLocality());
@@ -280,10 +283,12 @@ public class Place_order_Activity extends AppCompatActivity implements LocationL
     @Override
     public void onStatusChanged(String provider, int status, Bundle extras) {
 
+
     }
 
     @Override
     public void onProviderEnabled(String provider) {
+
 
     }
 

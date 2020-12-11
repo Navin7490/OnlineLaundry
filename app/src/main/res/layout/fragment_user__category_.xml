@@ -9,6 +9,7 @@
         android:layout_width="match_parent"
         app:auto_cycle="true"
         app:period="2000"
+        android:visibility="invisible"
         android:id="@+id/imageSlider"
         android:layout_height="@dimen/_200sdp"/>
     <TextView
@@ -16,6 +17,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="@dimen/_7sdp"
+        android:visibility="invisible"
         android:scrollHorizontally="true"
         android:singleLine="true"
         android:gravity="center"
@@ -25,9 +27,31 @@
         android:textStyle="italic" />
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/Rv_UsrCate"
+        android:visibility="invisible"
         android:layout_below="@+id/Tvmaruee"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/shimmer_layoutcategory">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+
+        <include
+            layout="@layout/item_cateshimmer"/>
+        <include
+
+            layout="@layout/item_cateshimmer"/>
+        <include
+
+            layout="@layout/item_cateshimmer"/>
+        </LinearLayout>
+
+    </com.facebook.shimmer.ShimmerFrameLayout>
 
 
 </RelativeLayout>

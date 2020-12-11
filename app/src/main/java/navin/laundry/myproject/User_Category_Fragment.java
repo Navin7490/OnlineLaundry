@@ -27,6 +27,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.denzcoskun.imageslider.ImageSlider;
 import com.denzcoskun.imageslider.models.SlideModel;
+import com.facebook.shimmer.ShimmerFrameLayout;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -60,6 +61,7 @@ public class User_Category_Fragment extends Fragment {
     ImageSlider imageSlider;
     TextView tvmqree;
     Animation aniblanki;
+    ShimmerFrameLayout shimmerFrameLayout;
     public User_Category_Fragment() {
         // Required empty public constructor
     }
@@ -104,6 +106,10 @@ public class User_Category_Fragment extends Fragment {
         aniblanki = AnimationUtils.loadAnimation(getActivity(), R.anim.anim);
         tvmqree.setVisibility(View.VISIBLE);
 
+
+        //Initialize shimmerlayout
+        shimmerFrameLayout=v.findViewById(R.id.shimmer_layoutcategory);
+
         tvmqree.startAnimation(aniblanki);
         recyclerView=v.findViewById(R.id.Rv_UsrCate);
         recyclerView.setHasFixedSize(true);
@@ -111,13 +117,14 @@ public class User_Category_Fragment extends Fragment {
 
         product=new ArrayList<>();
         final ProgressDialog progressDialog = new ProgressDialog(getActivity());
-        progressDialog.show();
+       // progressDialog.show();
         progressDialog.setCanceledOnTouchOutside(false);
         progressDialog.setContentView(R.layout.progrees_dialog);
         progressDialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
         recyclerView.setVisibility(View.VISIBLE);
 
-
+       // start simmer
+        shimmerFrameLayout.startShimmer();
 
         StringRequest stringpager = new StringRequest(Request.Method.GET, VIEWPAGER_URL, new Response.Listener<String>() {
             @Override
@@ -137,8 +144,13 @@ public class User_Category_Fragment extends Fragment {
                         String name = category.getString("v_title");
                         slideModels.add(new SlideModel(image, name));
                         imageSlider.setImageList(slideModels, true);
+                        imageSlider.setVisibility(View.VISIBLE);
+
 
                     }
+                    shimmerFrameLayout.stopShimmer();
+                    shimmerFrameLayout.setVisibility(View.GONE);
+
                 } catch (JSONException ex) {
                     ex.printStackTrace();
                 }
@@ -160,7 +172,7 @@ public class User_Category_Fragment extends Fragment {
         StringRequest stringmarque = new StringRequest(Request.Method.GET, MARQUETEXT_URL, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                progressDialog.dismiss();
+                //progressDialog.dismiss();
                 try {
                     JSONObject jsonObject = new JSONObject(response);
                     JSONArray jsonArray = jsonObject.getJSONArray("category_product");
@@ -170,9 +182,11 @@ public class User_Category_Fragment extends Fragment {
 
                         String name = category.getString("m_text");
                         tvmqree.setText(name);
+                        tvmqree.setVisibility(View.VISIBLE);
 
 
                     }
+
                 } catch (JSONException ex) {
                     ex.printStackTrace();
                 }
@@ -215,8 +229,10 @@ public class User_Category_Fragment extends Fragment {
                         product.add(productModal);
                         Category_Adapter categoryAdapter = new Category_Adapter(getActivity(), product);
                         recyclerView.setAdapter(categoryAdapter);
+                        recyclerView.setVisibility(View.VISIBLE);
 
                     }
+
                 } catch (JSONException ex) {
                     ex.printStackTrace();
                 }

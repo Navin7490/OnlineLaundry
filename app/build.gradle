@@ -54,5 +54,7 @@ dependencies {
 
     //razorpay
     implementation 'com.razorpay:checkout:1.5.16'
+    // shimmer
+    implementation 'com.facebook.shimmer:shimmer:0.5.0'
 
 }
